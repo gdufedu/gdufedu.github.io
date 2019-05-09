@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        input {
+            width: 100px;
+            height: 40px;
+            border: none;
+            background: url(images/btn.png);
+        }
+        a {
+            display: inline-block;
+            height: 40px;
+            text-decoration: none;
+            line-height: 40px;
+            background: url(images/btn_bg.png);
+            padding-left: 15px;
+        }
+        a span {
+            display: inline-block;
+            height: 40px;
+            color: #fff;
+            background: url(images/btn_bg.png) right -40px;
+            padding-right: 15px;
+        }
+        a:hover {
+            background-position: 0 -80px;
+        }
+        a:hover span {
+            background-position: right -120px;
+        }
+        .css3Btn {
+            display: inline-block;
+            height: 38px;
+            padding: 0 15px;
+            background: url(images/css3_btn_bg.png);
+            color: #fff;
+            border: 1px solid #3c81c4;
+            border-radius: 5px;
+        }
+        .css3Btn:hover {
+            background-position: 0 -40px;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="按钮">
+    <input type="submit" value="提交">
+    <input type="reset" value="重置">
+    <br>
+    <br>
+    <a href="javascript:;" class="css3Btn" onclick="alert(1);">按钮</a>
+</body>
+</html>
