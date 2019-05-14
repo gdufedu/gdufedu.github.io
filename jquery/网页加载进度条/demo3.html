@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>进度条3</title>
+    <style>        
+        .loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 100;
+            background: #fff;
+            width: 100%;
+            height: 100%;
+        }
+        .loading .pic {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: #f33;
+            width: 0;
+            height: 5px;
+        }
+    </style>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="loading">
+        <div class="pic">
+        </div>
+    </div>
+    <header>
+        <img src="https://ss1.baidu.com/9vo3dSag_xI4khGko9WTAnF6hhy/image/h%3D300/sign=77d1cd475d43fbf2da2ca023807fca1e/9825bc315c6034a8ef5250cec5134954082376c9.jpg" alt="">
+        <img src="https://ss1.baidu.com/-4o3dSag_xI4khGko9WTAnF6hhy/image/h%3D300/sign=0734f78af2039245beb5e70fb795a4a8/b8014a90f603738d6d8d0d65bd1bb051f919ecb6.jpg" alt="">
+    </header>
+    <script>
+        $('.loading .pic').animate({width:"10%"},100);
+    </script>
+    <section class="banner">
+        <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1557808929059&di=6c92e2f41b45e4e09fc1f5c2b7cbd664&imgtype=0&src=http%3A%2F%2Fb.hiphotos.baidu.com%2Fimage%2Fpic%2Fitem%2F32fa828ba61ea8d3fcd2e9ce9e0a304e241f5803.jpg" alt="">
+        <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1557808929059&di=62b6fc58f0d9386025e89c79d6d895db&imgtype=0&src=http%3A%2F%2Fe.hiphotos.baidu.com%2Fimage%2Fpic%2Fitem%2F4610b912c8fcc3cef70d70409845d688d53f20f7.jpg" alt="">
+    </section>
+    <script>
+        $('.loading .pic').animate({width:"30%"},100);
+    </script>
+    <section class="about">
+        <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1557808929058&di=bf887c6dfa59962c0608d45395bd2eb2&imgtype=0&src=http%3A%2F%2Fe.hiphotos.baidu.com%2Fimage%2Fpic%2Fitem%2Fdc54564e9258d1092f7663c9db58ccbf6c814d30.jpg" alt="">
+    </section>
+    <script>
+        $('.loading .pic').animate({width:"50%"},100);
+    </script>
+    <section class="pro">
+        <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1557808929058&di=c2571e059125f3c1839c49c5b16e548f&imgtype=0&src=http%3A%2F%2Fc.hiphotos.baidu.com%2Fimage%2Fpic%2Fitem%2F9922720e0cf3d7ca810f3732f81fbe096a63a9fd.jpg" alt=""> 
+    </section>
+    <script>
+        $('.loading .pic').animate({width:"80%"},100);
+    </script>
+    <section class="news">
+        <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1557808929058&di=bf887c6dfa59962c0608d45395bd2eb2&imgtype=0&src=http%3A%2F%2Fe.hiphotos.baidu.com%2Fimage%2Fpic%2Fitem%2Fdc54564e9258d1092f7663c9db58ccbf6c814d30.jpg" alt="">
+    </section>
+    <script>
+        $('.loading .pic').animate({width:"95%"},100);
+    </script>
+    <footer>
+        <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1557808929058&di=c2571e059125f3c1839c49c5b16e548f&imgtype=0&src=http%3A%2F%2Fc.hiphotos.baidu.com%2Fimage%2Fpic%2Fitem%2F9922720e0cf3d7ca810f3732f81fbe096a63a9fd.jpg" alt=""> 
+    </footer>
+    <script>
+        $('.loading .pic').animate({width:"100%"},100,function(){
+            $('.loading').fadeOut();
+        });
+    </script>
+</body>
+</html>
