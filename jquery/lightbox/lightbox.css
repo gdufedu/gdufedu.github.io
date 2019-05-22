@@ -1,0 +1,121 @@
+blockquote,body,button,dd,dl,dt,fieldset,form,h1,h2,h3,h4,h5,h6,hr,input,legend,li,ol,p,pre,td,textarea,th,ul{margin:0;padding:0}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+fieldset, img {
+    border: 0;
+}
+address, caption, cite, code, dfn, em, strong, th, var {
+    font-style: normal;
+    font-weight: normal;
+}
+ol, ul {
+    list-style: none;
+}
+caption, th {
+    text-align: left;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+    font-weight: normal;
+}
+q::before,q::after {
+    content: '';
+}
+abbr, acronym {
+    border: 0;
+}
+body {
+    font: 12px/1.5 '微软雅黑', tahoma,arial,'Hiragino Sans GB',宋体,sans-serif;
+}
+.clearfix::after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: '';
+    clear: both;
+    height: 0;
+}
+.clearfix {
+    zoom: 1;
+}
+.text-ellipsis {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+#G-lightbox-mask {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+    z-index: 10000;
+}
+#G-lightbox-popup {
+    display: none;
+    position: fixed;
+    width: 400px;
+    left: 50%;
+    top: 50px;
+    z-index:10001;
+    margin-left: -200px;
+}
+#G-lightbox-popup .lightbox-pic-view {
+    position: relative;
+    border: 5px solid #fff;
+    border-radius: 3px;
+    overflow: hidden;
+    background: #fff url(./icon/loading.gif) no-repeat center center;
+}
+#G-lightbox-popup  .lightbox-pic-view .lightbox-btn {
+    position: absolute;
+    top: 0;
+    width: 40%;
+    height: 100%;
+    z-index: 1;
+}
+#G-lightbox-popup  .lightbox-pic-view .lightbox-prev-btn {
+    left: 0;
+}
+#G-lightbox-popup  .lightbox-pic-view .lightbox-next-btn {
+    right: 0;
+}
+#G-lightbox-popup  .lightbox-pic-view .lightbox-prev-btn-show {
+    background: url('./icon/prev.png') no-repeat left center;
+    cursor: pointer;
+}
+#G-lightbox-popup  .lightbox-pic-view .lightbox-next-btn-show {
+    background: url('./icon/next.png') no-repeat right center;
+    cursor: pointer;
+}
+#G-lightbox-popup  .lightbox-pic-view  .lightbox-image {
+    display: block;
+}
+#G-lightbox-popup .lightbox-pic-caption {
+    position: relative;
+    z-index: 2;
+    margin: 0 5px;
+    margin-top: -60px;
+    background-color: rgba(0, 0, 0, .5);
+}
+#G-lightbox-popup .lightbox-pic-caption .lightbox-caption-area {
+    color: #fff;
+    padding: 10px 5px;
+}
+#G-lightbox-popup .lightbox-pic-caption .lightbox-caption-area .lightbox-of-index {
+    color: #999;
+}
+#G-lightbox-popup .lightbox-pic-caption .lightbox-close-btn {
+    position: absolute;
+    right: 10px;
+    top: 13px;
+    width: 27px;
+    height: 27px;
+    background: url(./icon/close.png) no-repeat center center;
+}
