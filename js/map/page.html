@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>模板</title>
+<link href="css/css.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+<div class="head">
+  <div class="logo">
+		<a target="_self" href="#"><img src="images/jiaoyiwulogo.png" /></a>
+	</div>
+	<div class="xiaoming">    	
+    <a target="_blank" href="http://www.hngcjx.com.cn/" title="转至湖南工程职业技术学院官网">湖南工程职业技术学院</a>
+	<p>交谊舞协会</p>
+    </div>
+    <div class="clear"></div>
+    <div class="dh">
+	<ul>
+		<li class="txt1"><a href="#" target="_self">首页</a></li>
+        <li class="txt1"><a href="#" target="_blank">关于舞协</a></li>
+        <li class="txt1"><a class="xxjc"href="#" target="_blank">学习教程</a>
+     <ul>
+        <li class="txt3"><a href="#" target="_blank">舞蹈平四</a></li>
+        <li class="txt3"><a href="#" target="_blank">探戈</a></li>
+        <li class="txt3"><a href="#" target="_blank">牛仔</a></li>
+        <li class="txt3"><a href="#" target="_blank">华尔兹</a></li>
+        <li class="txt3"><a href="#" target="_blank">nobody</a></li>
+    </ul>
+        </li>
+        <li class="txt1"><a href="#" target="_blank">舞协活动</a></li>
+        <li class="txt2"><a href="#" target="_blank">加入我们</a></li>
+    </ul>
+	</div>
+</div>
+
+<div class="banner">
+    <img src="./images/dance.png" alt="">
+</div>
+<div class="content">
+    <div class="contact">
+        <h3>舞蹈QQ群</h3>
+        <div class="box">
+            <img src="./images/contact.png" alt="">
+            <h3>
+                QQ群：888-888<br/>
+                舞蹈群二维码:
+            </h3>
+        </div>
+        <div id="allmap"></div>
+    </div>
+</div>
+
+<div class="wl">
+<div class="wl1">
+<div class="wl2"><p>友情链接：</p><a href="#" target="_blank">湖南工程职业技术学院</a>
+                                  &nbsp<a href="#" target="_blank">院社联</a>
+                                  &nbsp<a href="#" target="_blank">院学生会</a><br />
+                                  &nbsp<a href="#" target="_blank">微信公众号</a>
+                                  &nbsp<a href="#" target="_blank">QQ群</a>
+                                  &nbsp<a href="#" target="_blank">动漫社</a>
+                                  &nbsp<a href="#" target="_blank">书法社</a>
+</div>
+
+<div class="xian1"><img src="images/xian1.jpg" /></div>
+<div class="wl3"><p>Copyright@2010-2019湖南工程职业技术学院交谊舞协会 版权所有</br>经营性许可证编号：湘B2-20160539</br>湘ICP备10034049</p></div>
+<div class="xian2"><img src="images/xian2.jpg" /></div>
+<div class="yclogo"><p>技术支持</p>
+<div class="tup">
+<a href="http://www.superhyn.com" target="_blank"><img src="images/yclogo.png"/></a>
+</div>
+<a href="http://www.superhyn.com" target="_blank">优创有限公司</a>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+    //百度地图API功能
+	function loadJScript() {
+		var script = document.createElement("script");
+		script.type = "text/javascript";
+		script.src = "http://api.map.baidu.com/api?v=2.0&ak=aj5QgKLCG43UlSlA2gqqgfSGDoyvAaFb&callback=init";
+		document.body.appendChild(script);
+	}
+	function init() {
+		var map = new BMap.Map("allmap");            // 创建Map实例
+		var point = new BMap.Point(113.075286,28.281227); // 创建点坐标
+		map.centerAndZoom(point,15);
+        var marker = new BMap.Marker(point);
+        map.addOverlay(marker);                 
+		map.enableScrollWheelZoom();                 //启用滚轮放大缩小
+	}  
+	window.onload = loadJScript;  //异步加载地图
+</script>
+</body>
+</html>
