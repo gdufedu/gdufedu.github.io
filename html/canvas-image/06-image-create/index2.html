@@ -34,8 +34,23 @@
                 drawPath(context, x, y, r, a);
             }
             fillMoon(context, 2, 900, 200, 100, 30);
+            drawLand(context);
         }
-
+        function drawLand(cxt) {
+            cxt.save();
+            cxt.beginPath();
+            cxt.moveTo(0, 600);
+            cxt.bezierCurveTo(540, 400, 660, 800, 1200, 600);
+            cxt.lineTo(1200, 800);
+            cxt.lineTo(0, 800);
+            cxt.closePath();
+            var landStyle = cxt.createLinearGradient(0, 800, 0, 0);
+            landStyle.addColorStop(0.0, '#030');
+            landStyle.addColorStop(1.0, '#058');
+            cxt.fillStyle = landStyle;
+            cxt.fill();
+            cxt.restore();
+        }
         function drawPath(ctx, xw, yw, R, rot) {
 
             ctx.save();
