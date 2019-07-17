@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .box{
+            height: 100px;
+            width: 190px;
+            display: inline-block;
+            position: relative;
+            margin: 100px auto;
+        }
+        .first{
+            height: 110px;
+            width: 190px;
+            position: absolute;
+            overflow: hidden;
+            z-index: 999999;
+            border-left: 2px solid #c8a200;
+            border-right :2px solid #c8a200;
+        }
+        .second{
+            height: 110px;
+            width: 190px;
+            -webkit-transform:rotate(60deg);
+            position: absolute;
+            overflow: hidden;
+            border-left: 2px solid #c8a200;
+            border-right :2px solid #c8a200;
+        }
+        .third{
+            height: 110px;
+            width: 190px;
+            -webkit-transform:rotate(-60deg);
+            position: absolute;
+            overflow: hidden;
+            border-left: 2px solid #c8a200;
+            border-right :2px solid #c8a200;
+        }
+        .firstImg{
+            margin-top: -55px;
+        }
+        .secondImg{
+            -webkit-transform:rotate(-60deg);
+            margin-top: -55px;
+        }
+        .thirdImg{
+            -webkit-transform:rotate(60deg);
+            margin-top: -55px;
+        }
+        img {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="first">
+            <img class="firstImg" src="1.jpg" width="190px" height="220px">
+        </div>
+        <div class="second">
+            <img class="secondImg" src="1.jpg" width="190px" height="220px">
+        </div>
+        <div class="third">
+            <img class="thirdImg"  src="1.jpg" width="190px" height="220px">
+        </div>
+    </div>
+    <div class="box">
+        <div class="first">
+            <img class="firstImg" src="1.jpg" width="190px" height="220px">
+        </div>
+        <div class="second">
+            <img class="secondImg" src="1.jpg" width="190px" height="220px">
+        </div>
+        <div class="third">
+            <img class="thirdImg"  src="1.jpg" width="190px" height="220px">
+        </div>
+    </div>
+    <div class="box">
+        <div class="first">
+            <img class="firstImg" src="1.jpg" width="190px" height="220px">
+        </div>
+        <div class="second">
+            <img class="secondImg" src="1.jpg" width="190px" height="220px">
+        </div>
+        <div class="third">
+            <img class="thirdImg"  src="1.jpg" width="190px" height="220px">
+        </div>
+    </div>
+    <div class="box">
+        <div class="first">
+            <img class="firstImg" src="1.jpg" width="190px" height="220px">
+        </div>
+        <div class="second">
+            <img class="secondImg" src="1.jpg" width="190px" height="220px">
+        </div>
+        <div class="third">
+            <img class="thirdImg"  src="1.jpg" width="190px" height="220px">
+        </div>
+    </div>
+</body>
+</html>
