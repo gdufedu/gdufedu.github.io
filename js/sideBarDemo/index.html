@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>sidebar demo</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <style>
+        ul {
+            list-style: none;  
+            padding-left: 0;          
+        }
+        #sidebar {
+            width: 35px;
+            background-color: #e1e1e1;
+            padding-top: 200px;
+            position: fixed;
+            min-height: 100%;
+            z-index: 100;
+        }
+        .item {
+            font-size: 12px;
+            font-family: 'Microsoft YaHei';
+            text-align: center;
+            margin-top: 5px;
+        }
+        #closeBar {
+            position: absolute;
+            bottom: 30px;
+            width: 35px;
+            text-align: center;
+            cursor: pointer;
+        }
+        .nav-content {
+            width: 200px;
+            position: fixed;
+            min-height: 100%;
+            background-color: #e1e1e1;
+            border: 1px solid black;
+            z-index: 99;
+            opacity: 0;
+        }
+        .nav-con-close {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            cursor: pointer;
+        }
+        .sidebar-move-left {
+            animation-name: smf;
+            animation-duration: 1s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+        }
+        @keyframes smf {
+            from {
+
+            }
+            to {
+                transform: translateX(-120px);
+            }
+        }
+        .closeBar-move-right {
+            animation-name: cmr;
+            animation-duration: 1s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+        }
+        @keyframes cmr {
+            from {
+
+            }
+            to {
+                transform: translateX(160px) rotate(405deg) scale(1.5);
+            }
+        }
+        .sidebar-move-right {
+            animation-name: smr;
+            animation-duration: 1s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+        }
+        @keyframes smr {
+            from {
+
+            }
+            to {
+                transform: translateX(120px);
+            }
+        }
+        .closeBar-move-left {
+            animation-name: cml;
+            animation-duration: 1s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+        }
+        @keyframes cml {
+            from {
+                transform: scale(1.5);
+            }
+            to {
+                transform: translateX(160px) scale(1) rotate(-360deg);
+            }
+        }
+        .menuContent-move-right {
+            animation-name: mmr;
+            animation-duration: .5s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+        }
+        @keyframes mmr {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+                transform: translateX(120px);
+            }
+        }
+        .menuContent-move-left {
+            animation-name: mml;
+            animation-duration: 1s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+        }
+        @keyframes mml {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0;
+                transform: translateX(-120px);
+            }
+        }
+        .menuContent-move-up {
+            animation-name: mmu;
+            animation-duration: 1s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+        }
+        @keyframes mmu {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+                transform: translateY(-250px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="sidebar">
+        <ul>
+            <li id="prof" class="item">
+                <span class="glyphicon glyphicon-search"></span>
+                <div>我</div>
+            </li>
+            <li id="asset" class="item">
+                <span class="glyphicon glyphicon-search"></span>
+                <div>资产</div>
+            </li>
+            <li id="brand" class="item">
+                <span class="glyphicon glyphicon-search"></span>
+                <div>品牌</div>
+            </li>
+            <li id="broadcast" class="item">
+                <span class="glyphicon glyphicon-search"></span>
+                <div>直播</div>
+            </li>
+            <li id="foot" class="item">
+                <span class="glyphicon glyphicon-search"></span>
+                <div>看过</div>
+            </li>
+            <li id="calendar" class="item">
+                <span class="glyphicon glyphicon-search"></span>
+                <div>日历</div>
+            </li>
+        </ul>
+        <div id="closeBar">
+            <span class="glyphicon glyphicon-remove"></span>
+        </div>
+    </div>
+    <div class="nav-content" id="prof-content">
+        <div class="nav-con-close">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+        </div>
+        <div>我</div>
+    </div>
+    <div class="nav-content" id="asset-content">
+        <div class="nav-con-close">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+        </div>
+        <div>资产</div>
+    </div>
+    <div class="nav-content" id="brand-content">
+        <div class="nav-con-close">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+        </div>
+        <div>品牌</div>
+    </div>
+    <div class="nav-content" id="broadcast-content">
+        <div class="nav-con-close">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+        </div>
+        <div>直播</div>
+    </div>
+    <div class="nav-content" id="foot-content">
+        <div class="nav-con-close">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+        </div>
+        <div>看过</div>
+    </div>
+    <div class="nav-content" id="calendar-content">
+        <div class="nav-con-close">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+        </div>
+        <div>日历</div>
+    </div>
+    <script>
+        (function() {
+            var Menubar = function() {
+                this.el = document.querySelector('#sidebar ul');
+                this.state = 'allClosed';
+                this.el.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                });
+                var self = this;
+                this.currentOpenMenuContent = null;
+                this.menuList = document.querySelectorAll('#sidebar ul > li');
+                for (var i = 0; i < this.menuList.length; i++) {
+                    this.menuList[i].addEventListener('click', function (e) {
+                        var menuContentEl = document.getElementById(e.currentTarget.id + '-content');
+                        if (self.state === 'allClosed') {
+                            console.log('打开' + menuContentEl.id);
+                            menuContentEl.style.top = '0';
+                            menuContentEl.style.left = '-85px';
+                            menuContentEl.className = 'nav-content';
+                            menuContentEl.classList.add('menuContent-move-right');
+                            self.state = 'hasOpened';
+                            self.currentOpenMenuContent = menuContentEl;
+                        } else {
+                            console.log('关闭' + self.currentOpenMenuContent.id);
+                            self.currentOpenMenuContent.className = 'nav-content';
+                            self.currentOpenMenuContent.style.top = '0';
+                            self.currentOpenMenuContent.style.left = '35px';
+                            self.currentOpenMenuContent.classList.add('menuContent-move-left');
+                            console.log('打开' + menuContentEl.id);
+                            menuContentEl.className = 'nav-content';
+                            menuContentEl.style.top = '250px';
+                            menuContentEl.style.left = '35px';
+                            menuContentEl.classList.add('menuContent-move-up');
+                            self.state = 'hasOpened';
+                            self.currentOpenMenuContent = menuContentEl;
+                        }
+                    });
+                }
+                this.menuContentList = document.querySelectorAll('.nav-content > div.nav-con-close');
+                for (i = 0; i < this.menuContentList.length; i++) {
+                    this.menuContentList[i].addEventListener('click', function (e) {
+                        var menuContent = e.currentTarget.parentNode;
+                        menuContent.className = 'nav-content';
+                        menuContent.style.top = '0';
+                        menuContent.style.left = '35px';
+                        menuContent.classList.add('menuContent-move-left');
+                        self.state = 'allClosed';
+                    });
+                }
+            };
+            var Sidebar = function(eId, closeBarId) {
+                this.state = 'opened';
+                this.el = document.getElementById(eId || 'sidebar');
+                this.closeBarEl = document.getElementById(closeBarId || 'closeBar');
+                var self = this;
+                this.menubar = new Menubar();
+                this.el.addEventListener('click', function (event) {
+                    if (event.target !== self.el) {
+                        self.triggerSwich();
+                    }
+                });
+            };
+            Sidebar.prototype.close = function () {
+                console.log('关闭sidebar');
+                this.el.style.left = '0';
+                this.closeBarEl.style.left = '0';
+                this.el.className = 'sidebar-move-left';
+                this.closeBarEl.className = 'closeBar-move-right';
+                this.state = 'closed';
+            };
+            Sidebar.prototype.open = function () {
+                console.log('打开sidebar');
+                this.el.style.left = '-120px';
+                this.el.className = 'sidebar-move-right';
+                this.closeBarEl.style.left = '-160px';
+                this.closeBarEl.className = 'closeBar-move-left';
+                this.state = 'opened';
+            };
+            Sidebar.prototype.triggerSwich = function () {
+                if(this.state === 'opened') {
+                    this.close();
+                } else {
+                    this.open();
+                }
+            };
+            var sidebar = new Sidebar();
+        })();
+    </script>
+</body>
+</html>
