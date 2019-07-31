@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>时光轴</title>
+    <style>
+        body {
+            background: url(images/1.jpg) #1c0c0f center 0 no-repeat fixed;
+            margin: 0;
+            padding: 0;
+            padding-top: 41px;
+        }
+        .hide {
+            display: none;
+        }
+        .top {
+            position: fixed;
+            width: 100%;
+            height: 41px;
+            top: 0;
+            background: #001e3b;
+            z-index: 99;
+            box-shadow: 0 1px 0 rgba(0, 0, 0 , .2);
+        }
+        .header {
+            width: 960px;
+            height: 200px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255 , .2)
+        }
+        .container {
+            position: relative;
+            width: 960px;
+            margin: 0 auto;
+        }
+        .scrubber {
+            position: absolute;
+            top: 29px;
+            left: 0;
+            z-index: 999;
+            width: 47px;
+            min-height: 200px;
+        }
+        .content {
+            position: relative;
+            min-height: 1000px;
+            background: url(images/spine.png) repeat-y 121px 0;
+            padding-top: 50px;
+            padding-left: 160px;
+        }
+        .scrubber a{
+            height: 26px;line-height: 26px;
+            padding-right: 5px;font-size: 12px;
+            color: #a5a5a5;text-decoration: none; display: block;
+            border-right:2px solid #c8c8c8;
+            border-right-color: rgba(200,200,200,.5);
+            text-shadow: 0 1px 1px rgba(0,0,0,.3);
+            text-align: right;
+        }
+        .scrubber a:hover,
+        .scrubber a.current{border-right-color: #7ebad0;color: #7ebad0;font-weight: bold;}
+        .scrubber a:hover{text-decoration: underline;}
+        .scrubber a.current:hover{text-decoration: none;}
+        .content_year,
+        .content_month {
+            position: relative;
+            line-height: 30px;
+            color: #a5a5a5;
+            text-shadow: 0 1px 1px rgba(0, 0, 0, .3);
+            font-weight: bold;
+            font-size: 14px;
+            left: -90px;
+            clear: both;
+        }
+        .content_item {
+            position: relative;
+            width: 370px;
+            min-height: 300px;
+            background: #fff;
+            border-radius: 4px;
+            margin: 20px 30px 0 0;
+            color: #888;
+        }
+        .content .first {margin-top: -20px;}
+        .content_item_left {
+            float: left;
+        }
+        .content_item_right {
+            float: right;
+        }
+        .content_item_right .content_item_icon_dot {
+            left: -443px;
+        }
+        .content_item_icon_arrow {
+            position: absolute;
+            left: -10px;
+            top: 20px;
+            height: 0;
+            border-color: transparent #fff transparent transparent;
+            border-width: 10px 10px 10px 0;
+            border-style: dashed solid dashed dashed;
+        }
+        .content_item_icon_dot {
+            width: 11px;
+            height: 11px;
+            border-radius: 11px;
+            background: #fff;
+            position: absolute;
+            left: -43px;
+            top: 25px;
+        }
+        .content_item_icon_dot_child {
+            width: 7px;
+            height: 7px;
+            border-radius: 7px;
+            background: #b3dae9;
+            position: absolute;
+            left: 2px;
+            top: 2px;
+        }
+        .content_item_head {
+            padding: 15px;
+            padding-bottom: 0;
+        }
+        .content_item_head_title {
+            line-height: 46px;
+            font-size: 28px;
+            padding: 0 0 10px 56px;
+            position: relative;
+        }
+        .content_item_head_title_lunar {
+            width: 46px;
+            height: 46px;
+            background: #b3dae9;
+            border-radius: 8px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            overflow: hidden;
+            color: #fff;
+            font-size: 27px;
+            line-height: 23px;
+        }
+        .content_item_head_intro {
+            font-size: 14px;
+            line-height: 22px;
+            padding: 0 15px;
+            margin-bottom: 10px;
+        }
+        .content_item_media {
+            height: 277px;
+            overflow: hidden;
+            padding-bottom: 10px;
+        }
+        .content_item_footer {
+            padding: 10px 15px;
+            margin: 0 15px;
+            border-top: 1px solid #d6d6d6;
+            font-size: 12px;
+            color: #b2b2b2;
+            line-height: 20px;
+        }
+        .content_item_footer_info a{
+            color: #b2b2b2;
+            text-decoration: none;
+            padding-right: 10px;
+            display: inline-block;
+            height: 20px;
+        }
+        .icon_zan, .icon_pin {
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            background-repeat: no-repeat;
+            font-size: 0;
+            overflow: hidden;
+            background-image: url(images/timeline.png);
+            vertical-align: middle;
+            visibility: visible;
+        }
+        .icon_zan {
+            background-position: -883px -21px;
+        }
+        .icon_pin {
+            background-position: -897px -42px;
+        }
+        .content_item_footer_like {
+            padding-top: 5px;
+        }
+        .ui_icon {
+            width: 15px;
+            height: 15px;
+            display: inline-block;
+            background-repeat: no-repeat;
+            font-size: 0;
+            overflow: hidden;
+            background-image: url(images/timeline.png);
+        }
+        .quote_before {
+            vertical-align: top;
+            background-position: -986px -85px;
+            margin-right: 5px;
+        }
+        .quote_after {
+            background-position: -986px -102px;
+            margin-left: 5px;
+            vertical-align: bottom;
+        }
+        .content_item_footer_like {
+            line-height: 20px;padding-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="hide">
+        <div id="tpl_scrubber_year">
+            <a href="javascript:;" class="scrubber_year current" id="scrubber_year_{year}" onclick="show_year({year})">{year}</a>
+            {list}
+        </div>
+        <div id="tpl_scrubber_month">
+            <a href="javascript:;" class="scrubber_month scrubber_month_in_{year}" id="scrubber_month_{year}_{month}" onclick="show_month({year},{month})">{month}月</a>
+        </div>
+        <div id="tpl_content_year">
+            <div class="content_year" id="content_year_{year}">{year}</div>
+            {list}
+        </div>
+        <div id="tpl_content_month">
+            <div class="content_month"id="content_month_{year}_{month}">{month}月</div>
+            {list}
+        </div>
+        <div id="tpl_content_item">
+            <div class="content_item content_item_{position} {isFirst}">
+                <div class="content_item_icon_arrow"></div>
+                <div class="content_item_icon_dot"><div class="content_item_icon_dot_child"></div></div>
+                <div class="content_item_head">
+
+                    <div class="content_item_head_title">
+                        <div class="content_item_head_title_lunar">
+                            {lunar}
+                        </div>
+                        {date}
+                    </div>
+                    <div class="content_item_head_intro">
+                        <i class="ui_icon quote_before"></i>
+                        {intro}
+                        <i class="ui_icon quote_after"></i>
+                    </div>
+                </div>
+                <div class="content_item_media">
+                    {media}
+                </div>
+                <div class="content_item_footer">
+                    <div class="content_item_footer_info">
+                            <a href="javascript:void(0)" class="op_zan" title="赞">
+                                <i class="icon_zan">赞</i>({like})</a>
+                            <a href="javascript:void(0)" class="op_pin" title="评论">
+                                <i class="icon_pin">评论</i>({comment})</a>
+                    </div>
+                    <div class="content_item_footer_like">
+                        {like_format}人觉得很赞
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="top"></div>
+    <div class="header"></div>
+    <div class="container">
+        <div class="scrubber" id="scrubber">
+            <a href="javascript:;" class="scrubber_year current">2014</a>
+            <a href="javascript:;" class="scrubber_month">2月</a>
+            <a href="javascript:;" class="scrubber_month">3月</a>
+        </div>
+        <div class="content" id="content">
+            <div class="content_year">2014</div>
+            <div class="content_month">3月</div>
+            <div class="content_item">
+                <div class="content_item_icon_arrow"></div>
+                <div class="content_item_icon_dot"><div class="content_item_icon_dot_child"></div></div>
+                <div class="content_item_head">
+
+                    <div class="content_item_head_title">
+                        <div class="content_item_head_title_lunar">三<br/>&nbsp;&nbsp;&nbsp;十</div>
+                        2014-3-30
+                    </div>
+                    <div class="content_item_head_intro">
+                        <i class="ui_icon quote_before"></i>
+                        在这春林初盛，草长莺飞的日子，QQ空间愿你关掉电脑，放下手机，与三五好友相约青山绿水中，感受春天带来的勃勃生机···
+                        <i class="ui_icon quote_after"></i>
+                    </div>
+                </div>
+                <div class="content_item_media">
+                    <img src="images/psb.jpeg" width="370">
+                </div>
+                <div class="content_item_footer">
+                    <div class="content_item_footer_info">
+                            <a href="javascript:void(0)" class="op_zan" title="赞">
+                                <i class="icon_zan">赞</i>(32906)</a>
+                            <a href="javascript:void(0)" class="op_pin" title="评论">
+                                <i class="icon_pin">评论</i>(883)</a>
+                    </div>
+                    <div class="content_item_footer_like">
+                        3.2万人觉得很赞
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="data.js"></script>
+    <script type="text/javascript" src="fx.js"></script>
+    <script type="text/javascript" src="GetLunarDay.js"></script>
+    <script>
+        var g = function (id) {
+            return document.getElementById(id);
+        };
+        var g_class = function (className) {
+            return document.getElementsByClassName(className);
+        };
+        var g_tpl = function (id) {
+            return g('tpl_' + id).innerHTML;
+        };
+        var get_body_w = function () {
+          return document.body.offsetWidth;  
+        };
+        var get_body_h = function () {
+          return document.body.offsetHeight;  
+        };
+        var list = {};
+        for(var i =0; i < data.length; i ++) {
+            var date = new Date(data[i].date);
+            var year = date.getFullYear();
+            var month = date.getMonth() + 1;
+            var lunar = GetLunarDateString(date);
+            if (!list[year]) {
+                list[year] = {};
+            }
+            if (!list[year][month]) {
+                list[year][month] = [];
+            }
+            var item = data[i];
+            item.lunar = lunar[0] + '<br/>&nbsp;&nbsp;&nbsp;' + lunar[1];
+            item.year = year;
+            item.month = month;
+            item.like_format = item.like < 10000 ? item.like : (item.like / 10000).toFixed(1) + '万';
+            list[year][month].push(item);
+        }
+        var html_scrubber_list = [];
+        var tpl_year = g_tpl('scrubber_year');
+        var tpl_month = g_tpl('scrubber_month');
+        for (y in list) {
+            var html_year = tpl_year.replace(/\{year\}/g, y);
+            var html_month = [];
+            for(m in list[y]) {
+                html_month.unshift(tpl_month.replace(/\{month\}/g, m).replace(/\{year\}/g, y));
+            }
+            html_year = html_year.replace(/\{list\}/g, html_month.join(''));
+            html_scrubber_list.push(html_year);
+        }
+        g('scrubber').innerHTML ='<a href="javascript:;" onclick="scroll_top(0)">现在</a>'+ html_scrubber_list.join('') + '<a href="javascript:;" onclick="scroll_top(get_body_h())">出生</a>';
+        var html_content_list = [];
+        var tpl_year = g_tpl('content_year');
+        var tpl_month = g_tpl('content_month');
+        var tpl_item = g_tpl('content_item');        
+        for (y in list) {
+            var html_year = tpl_year.replace(/\{year\}/g, y);
+            var html_month = [];
+            for(m in list[y]) {
+                var html_item = [];
+                var isFirst_at_month = true;
+                for ( i in list[y][m]) {
+                    var item_data = list[y][m][i];
+                    var item_html = tpl_item
+                        .replace(/\{date\}/g,item_data.date)
+                        .replace(/\{lunar\}/g,item_data.lunar)
+                        .replace(/\{intro\}/g,item_data.intro)
+                        .replace(/\{media\}/g,item_data.media)
+                        .replace(/\{like\}/g,item_data.like)
+                        .replace(/\{position\}/,i%2?'right':'left')
+                        .replace(/\{isFirst\}/,isFirst_at_month?'first':'')
+                        .replace(/\{comment\}/g,item_data.comment)
+                        .replace(/\{like_format\}/g,item_data.like_format);
+                    html_item.push(item_html);
+                    isFirst_at_month = false;
+                }
+                html_month.unshift(tpl_month.replace(/\{year\}/g, y).replace(/\{month\}/g, m).replace(/\{list\}/g, html_item.join('')));
+            }
+            html_year = html_year.replace(/\{list\}/g, html_month.join(''));
+            html_content_list.push(html_year);
+        }
+        g('content').innerHTML = html_content_list.join('') + '<div class="content_year" id="content_month_0_0">出生</div>';
+        var get_top = function (el) {
+            return el.offsetTop + 170;
+        };
+        var scroll_top = function (to) {
+            var start = document.documentElement.scrollTop || document.body.scrollTop;
+            fx(function (now) {
+                window.scroll(0, now);
+            }, start, to);
+        };
+        var show_year = function (year) {
+            var c_year = g('content_year_' + year);
+            var top = get_top(c_year);
+            scroll_top(top);
+            expand_year(year, g('scrubber_year_' + year));
+        };
+        var show_month = function (year, month) {
+            var c_month = g('content_month_' + year + '_' + month);
+            var top = get_top(c_month);
+            scroll_top(top);
+            highlight_month(g('scrubber_month_' + year + '_' + month));
+        };
+        var highlight_month = function (element) {
+            var months = g_class('scrubber_month');
+            for (var i = months.length-1; i >= 0; i--) {
+                months[i].className = months[i].className.replace(/current/g, '');                
+            }
+            element.className = element.className + ' current';
+        };
+        var expand_year = function (year, element) {
+            var months = g_class('scrubber_month');
+            var show_month = g_class('scrubber_month_in_' + year);
+            var years = g_class('scrubber_year');
+            for (var i = months.length-1; i >= 0; i--) {
+                months[i].style.display = 'none';                
+            }
+            for (var i = show_month.length-1; i >= 0; i--) {
+                show_month[i].style.display = 'block';                
+            }
+            for (var i = years.length-1; i >= 0; i--) {
+                years[i].className = years[i].className.replace(/current/g, '');                
+            }
+            element.className = element.className + ' current';
+        };
+        var update_scrubber_year = function (top) {
+            var years = g('content').getElementsByClassName('content_year');
+            var tops = [];
+            for (var i = 0; i < years.length; i++) {
+                tops.push(years[i].offsetTop);
+            }
+            for (var i = 1; i < tops.length; i++) {
+                if (top > tops[i - 1] && top < tops[i]) {
+                    var year = years[i-1].innerHTML;
+                    var s_year = g('scrubber_year_' + year);
+                    expand_year(year, s_year);
+                }
+            }
+        };
+        var update_scrubber_month = function (top) {
+            var months = g('content').getElementsByClassName('content_month');
+            var tops = [];
+            for (var i = 0; i < months.length; i++) {
+                tops.push(months[i].offsetTop);
+            }
+            for (var i = 1; i < tops.length; i++) {
+                if (top > tops[i - 1] && top < tops[i]) {
+                    var id = months[i-1].id;
+                    highlight_month(g(id.replace('content','scrubber')));
+                }
+            }
+        };
+        window.onscroll = function () {
+            var top = document.documentElement.scrollTop || document.body.scrollTop;
+            var scrubber = g('scrubber');
+            if (top > 200) {
+                scrubber.style.position = 'fixed';
+                scrubber.style.top = '60px';
+                scrubber.style.left = (get_body_w() - 960) / 2 +'px';
+            } else {
+                scrubber.style.position = '';
+                scrubber.style.top = '';
+                scrubber.style.left = '';
+            }
+            update_scrubber_year(top);
+            update_scrubber_month(top);
+        };
+    </script>
+</body>
+</html>
