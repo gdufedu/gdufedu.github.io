@@ -1,0 +1,71 @@
+body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 100%;
+	text-align: left;
+	background: #fff url(main_bg.gif) repeat-x top left;
+}
+.page-wrapper {
+	width: 770px;
+	margin: 0;
+	padding: 0;
+	background: url(quicksum_bg.gif) no-repeat;
+	margin-top: 28px;
+}
+.intro {
+	width: 770px;
+	margin: 0;
+	padding: 0;
+}
+.summary {
+	width: 180px;
+	padding: 10px;
+	float: left;
+	clear: both;
+	border-top: 1px dashed #999;
+}
+.preamble {
+	width: 180px;
+	padding: 0 10px;
+	clear: both;
+}
+.supporting {
+	position: absolute;
+	left: 200px;
+	top: 0;
+	width: 364px;
+	padding: 0 10px;
+	border: 1px;
+}
+.sidebar {
+	position: absolute;
+	left: 566px;
+	top: 0;
+}
+header {
+	margin: 0;
+	padding: 0;
+	width: 770px;
+	height: 72px;
+	margin-bottom: 22px;
+}
+header h1 {
+	background: transparent url(./intro_bg.jpg) no-repeat top left;
+	margin-top: 0;
+	width: 403px;
+	height: 72px;
+	float: left;
+}
+header h2 {
+	background: transparent url(./intro_bg2.jpg) no-repeat top left;
+	margin: 0;
+	width: 367px;
+	height: 72px;
+	float: left;
+}
+header h1, header h2 {
+	overflow: hidden;
+	white-space: nowrap;
+	text-indent: 100%;
+}
