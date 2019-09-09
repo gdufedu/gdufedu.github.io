@@ -1,113 +1,48 @@
-/* css Zen Garden submission 070 - 'CS(S) Monk' by Cedric Savarese - http://www.4213miles.com/ */
-/* css released under Creative Commons ShareAlike License v1.0 - http://creativecommons.org/licenses/sa/1.0/  */
-/* All associated graphics copyright 2003, Cedric Savarese */
-/* Added: January 2nd, 2003 */
-
-
-/* IMPORTANT */
-/* This design is not a template. You may not reproduce it elsewhere without the designer's written permission. */
-/* The CSS itself may freely be used for anything you wish, but the associated graphics belong to the designer. */
-/* What you may use - .css files. What you may not use - .jpg, .gif, and .png files. */
-
-
-/* basic elements */
-body {
-	color: #000000;
-	background: #fff url(BGTile.jpg) repeat left top;
+.body {
+	background: #fff url(./BGTile.jpg) repeat left top; 
 	margin: 0;
-	padding: 0;
-	font-style:normal;
-	font-variant:normal;
-	font-weight:normal;
-	line-height:normal;
 	font-size: small;
-	font-family:Georgia, "Times New Roman", Times, serif;
-	text-align:center;
-	}
-
-
-a:link {
-	padding: 0 0 1px 0;	
-	text-decoration: none;
-	color: #CC3300;
-	background-image: url(underline.gif);
-	background-repeat: repeat-x;
-	background-position: bottom left;
-	}
-a:visited { 
-	text-decoration: none; 
-	color: #666666;
-	padding: 0 0 2px 0;
-	background-image: url(underline.gif);
-	background-repeat: no-repeat;
-	background-position: bottom left;
-	}
-a:hover, a:active { 
-	text-decoration: none; 
-	color: #FF0000;
-	background-image: none;
-	}
-abbr {
-	border-bottom: none;
-	}
-
-/* specific divs */
+	text-align: center;
+	font-family: '隶书';
+	line-height: normal;
+}
 .page-wrapper {
-	background: url(ContentBG.gif) repeat-y left top;
-	margin:0px auto;
-	text-align:left;
+	background: url(./ContentBG.gif) repeat-y left top;
+	text-align: left;
 	width: 780px;
-	padding: 0px;
 	border-bottom: 1px solid #000;
-	}
+	padding: 0;
+	margin: 0 auto;
+}
 .intro {
 	position: relative;
 }
-header {	
-	background-image: url(CSZenLogo.gif);
-	background-repeat: no-repeat;
-	background-position: left;
+header {
+	background: url(./CSZenLogo.gif) no-repeat  left top;
 	height: 444px;
-	z-index:99;
+	z-index: 99;
 }
-
-
-header h1 {
-	display: none;
-}
-header h2 {
+header h1, header h2, .preamble h3 {
 	display: none;
 }
 .preamble {
-	background-image: url(RoadToEnlightmentBG_2.gif);
-	background-repeat: no-repeat;
-	background-position: right bottom;
-	width: 405px;
+	background: url(./RoadToEnlightmentBG_2.gif) no-repeat bottom left;
 	position: absolute;
 	left: 410px;
 	top: 15px;
-	
-	margin: 0;
-	padding: 0;
+	width: 405px;
 	font-size: x-small;
 	font-style: italic;
-	letter-spacing: 2px;
-}
-.preamble h3 {
-	display: none;
+	letter-spacing: 2px;	
 }
 .preamble p {
-	padding: 8px 70px 0px 70px;
-	margin: 0;	
+	padding: 8px 70px 0;
+	margin: 0;
 }
 .preamble p:nth-child(2) {
-	background-image: url(RoadToEnlightmentBG_1.gif);
-	background-repeat: no-repeat;
-	background-position: right top;
+	background: url(./RoadToEnlightmentBG_1.gif) no-repeat right top;
 	padding-top: 10px;
-	
 }
-
 .preamble p:nth-child(4) {
 	padding-bottom: 20px;
 }
@@ -115,143 +50,119 @@ header h2 {
 	position: absolute;
 	font-size: x-small;
 	left: 38px;
-	top: 515px;
-	width: 250px;
 	z-index: 5;
 	text-align: right;
 	letter-spacing: 2px;
+	width: 250px;
+    top: 515px;
 }
- 
-.explanation { 
-    background-image: url(SoWhatIsThisAbout.gif);
-	background-position: left top;
-	background-repeat: no-repeat;
-	margin: 40px 0px 0px 30px ;
+.explanation {
+	background: url(./SoWhatIsThisAbout.gif) left top no-repeat;
+	margin: 40px 0 0 30px;
 }
-.explanation h3 {
+.summary h3, .supporting h3 {
 	display: none;
 }
 .explanation p {
-	margin: 0px 50px 0px 280px ;
+	margin: 0 50px 0 280px;
 }
-
-.participation { 
-    background-image: url(Participation.gif);
-	background-position: left top;
-	background-repeat: no-repeat;
-	margin: 20px 0px 0px 150px ;
-}
-.participation h3 {
-	display: none;
+.participation {
+	background: url(./Participation.gif) left top no-repeat;
+	margin: 20px 0 0 150px;
 }
 .participation p {
-	margin: 0px 50px 0px 160px ;
+	margin: 0 50px 0 160px;
 }
-
-.benefits { 
-    background-image: url(Benefits.gif);
-	background-position: left top;
-	background-repeat: no-repeat;
-	margin: 40px 0px 0px 195px ;
-}
-.benefits h3 {
-	display: none;
+.benefits {
+	background: url(./Benefits.gif) no-repeat left top;
+	margin: 40px 0 0 195px;
 }
 .benefits p {
-	margin: 0px 50px 0px 115px ;
+	margin: 0 50px 0 115px;
 }
-
-.requirements { 
-    background-image: url(Requirements.gif);
-	background-position: left top;
-	background-repeat: no-repeat;
-	margin: 40px 0px 0px 140px ;
-}
-.requirements h3 {
-	display: none;
+.requirements {
+	background: url(./Requirements.gif) no-repeat left top;
+	margin: 40px 0 0 140px;
 }
 .requirements p {
-	margin: 0px 50px 0px 170px ;
+	margin: 0 50px 0 170px;
 }
 .sidebar {
 	margin: 40px auto;
-	padding: 0px;
-	background-image: url(NavBG.gif);
-	background-repeat: no-repeat;
-	background-position: left bottom;
+	padding: 0;
+	background: url(./NavBG.gif) no-repeat left bottom;
 	width: 729px;
 	font-size: xx-small;
 }
-
 .sidebar .wrapper {
-	background-image: url(NavBG_top.gif);
-	background-repeat: no-repeat;
-	background-position: left top;
+	background: url(./NavBG_top.gif) no-repeat left top;
 	width: 729px;
-	padding: 5px 0px;
+	padding: 5px 0;
 }
-.sidebar ul {
-	display: block;
-	padding: 0px 60px 0px 120px;
-	margin: 0;	 
-	line-height: 20px;
-	}	
-.sidebar li {	
-	display: inline;
-	list-style-image: none;	
-}
-.sidebar li:after {content:url(Bullet.gif); }
-
-.design-selection { 
-    background-image: url(SelectADesign.gif);
-	background-position: left center;
-	background-repeat: no-repeat;
-	margin: 0 0 0 20px;		
-}
-.design-selection h3 {
+.sidebar h3 {
 	display: none;
 }
-.design-archives { 
-    background-image: url(Archive.gif);
-	background-position: left top;
-	background-repeat: no-repeat;
-	margin: 10px 0 10px 20px;	 
-	padding: 8px 0;	
+.design-selection {
+	background: url(./SelectADesign.gif) left center no-repeat;
+	margin: 0 0 0 20px;
 }
-.design-archives h3 {
-	display: none;
-}
-	
-.zen-resources { 
-    background-image: url(Resources.gif);
-	background-position: left top;
-	background-repeat: no-repeat;
-	margin:  10px 0 10px 20px;	 	
+.design-archives {
+	background: url(./Archive.gif) left center no-repeat;
+	margin: 10px 0 10px 20px;
 	padding: 8px 0;
 }
-.zen-resources h3 {
-	display: none;
+.zen-resources {
+	background: url(./Resources.gif) left center no-repeat;
+	margin: 10px 0 10px 20px;
+	padding: 8px 0;
 }
-.extra1 {	
-	position: relative; 
-	top: -225px;
-	left: -360px;
-	margin: 0 auto;
-	width: 96px;
+.sidebar ul{
+	margin: 0;
+	padding: 0 60px 0 120px;
+	line-height: 20px;
+	display: block;
+}
+.sidebar li {
+	display: inline;	
+}
+.sidebar li::after {
+	content: url(./Bullet.gif);
+}
+footer {
+	margin-left: 310px;
+	font-size: x-small;
+	margin-top: 10px;
+}
+.extra1 {
+	position: relative;
+	background: url(./Dragon.gif) no-repeat left top;
 	height: 206px;
-	background-image: url(Dragon.gif);
-	background-position: left top;
-	background-repeat: no-repeat;
+	width: 96px;
+	margin: 0 auto;
+	left: -360px;
+	top: -225px;
 }
-
 p:nth-child(6) {
 	padding-top: 30px;
 	font-size: 10px;
 }
-
-footer {
-	padding-left: 160px;
-	font-size: x-small;
-	margin-top: -13px;
-	
+a:link {
+	padding: 0 0 1px 0;
+	text-decoration: none;
+	color: #cc3300;
+	background: url(./underline.gif) repeat-x bottom left;
+}
+a:visited {
+	padding: 0 0 2px 0;
+	text-decoration: none;
+	color: #666;
+	background: url(./underline.gif) no-repeat bottom left;
+}
+a:hover, a:active {
+	color: #f00;
+	background: none;
+	text-decoration: none;
+}
+abbr {
+	border-bottom: none;
 }
