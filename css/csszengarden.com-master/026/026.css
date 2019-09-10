@@ -1,28 +1,10 @@
-/* css Zen Garden submission 026 - 'Zunflower' by Radu Darvas - http://www.cssgatto.com/ */
-/* css released under Creative Commons ShareAlike License v1.0 - http://creativecommons.org/licenses/sa/1.0/  */
-/* All associated graphics copyright 2003,  Radu Darvas */
-
-
-/* IMPORTANT */
-/* This design is not a template. You may not reproduce it elsewhere without the designer's written permission. */
-/* The CSS itself may freely be used for anything you wish, but the associated graphics belong to the designer. */
-/* What you may use - .css files. What you may not use - .jpg, .gif, and .png files. */
-
-
-body { 
-	font: 12px/16px arial, helvetica, verdana, sans-serif; 
-	color: #555; 
-	background: url(bg_left.gif) repeat-y #fff;
-	margin: 0; 
-	padding: 0;
+body {
+	font: 12px/16px '黑体';
+	color: #555;
+	background: url(./bg_left.gif) repeat-y #fff;
+	margin: 0;
 }
-
 a {
-	text-decoration: none;
-	font-weight: bold;
-	color: #655;
-}
-a:hover {
 	text-decoration: none;
 	font-weight: bold;
 	color: #e60;
@@ -30,12 +12,31 @@ a:hover {
 abbr {
 	border: 0 none;
 }
-
 .page-wrapper {
 	margin: 0;
 	padding: 0;
 }
-
+.intro {
+	width: 303px;
+}
+h1 {
+	margin: 0;
+	width: 303px;
+	height: 198px;
+	background: url(./h1.jpg) no-repeat top left;
+	text-indent: 100%;
+	overflow: hidden;
+	white-space: nowrap;
+}
+h2 {
+	margin: 0 0 9px 0;
+	width: 303px;
+	height: 37px;
+	background: url(./h2.gif) no-repeat transparent;
+	text-indent: 100%;
+	overflow: hidden;
+	white-space: nowrap;
+}
 .summary p, .preamble p {
 	margin: 0;
 	padding: 8px 30px 4px 18px;
@@ -44,47 +45,15 @@ abbr {
 	font-weight: bold;
 	color: #777;
 }
-
-.intro {
-	margin: 0;
-	padding: 0;
-	width: 303px;
-}	
-h1 {
-	margin: 0;
-	padding: 0;
-	width: 303px;
-	height: 198px;
-	background: url(h1.jpg) no-repeat transparent;
-
-	text-indent: 100%;
-	white-space: nowrap;
-	overflow: hidden;
-}
-h2 {
-	margin: 0 0 9px 0;
-	padding: 0;
-	width: 303px;
-	height: 37px;
-	background: url(h2.gif) no-repeat transparent;
-
-	text-indent: 100%;
-	white-space: nowrap;
-	overflow: hidden;
-}
-
 .preamble h3 {
+	text-indent: 100%;
+	overflow: hidden;
+	white-space: nowrap;
+	background: url(./the_road.jpg) no-repeat;
 	margin: 5px 0 0;
-	padding: 0;
 	width: 303px;
 	height: 36px;
-	background: url(the_road.jpg) no-repeat transparent;
-
-	text-indent: 100%;
-	white-space: nowrap;
-	overflow: hidden;
 }
-
 .supporting {
 	position: absolute;
 	top: 70px;
@@ -92,100 +61,65 @@ h2 {
 	width: 320px;
 	margin: 0;
 	padding: 0;
-	background: url(support_bg.gif) repeat-y top right transparent;
+	background: url(./support_bg.gif) repeat-y top right;
 }
 .supporting h3, .supporting p {
 	margin: 0;
-	padding: 0 40px 10px 0px;
+	padding: 0 40px 10px 0;
 }
 .supporting h3 {
-	text-indent: 100%;
-	white-space: nowrap;
+	text-indent: -100%;
 	overflow: hidden;
+	white-space: nowrap;
+	margin: 0 40px 5px 0;
+	height: 34px;
+	border-bottom: 1px solid #ccc;
 }
-
 .participation h3 {
-	margin: 0 40px 5px 0px;
-	padding: 0;
-	height: 34px;
-	background: url(parti.gif) no-repeat transparent;
-	border-bottom: 1px solid #ccc;
-}
-.benefits h3 {
-	margin: 0 40px 5px 0px;
-	padding: 0;
-	height: 34px;
-	background: url(bene.gif) no-repeat transparent;
-	border-bottom: 1px solid #ccc;
+	background: url(./parti.gif) no-repeat transparent;
 }
 .requirements h3 {
-	margin: 0 40px 5px 0px;
-	padding: 0;
-	height: 34px;
-	background: url(req.gif) no-repeat transparent;
-	border-bottom: 1px solid #ccc;
+	background: url(./req.gif) no-repeat transparent;
+}
+.benefits h3 {
+	background: url(./bene.gif) no-repeat transparent;
+}
+.explanation h3 {
+	background: url(./so_what.jpg) no-repeat transparent;
+	margin: 0 15px 20px 0;
+	height: 36px;
+	border-bottom: 0 none;
 }
 .requirements p:nth-child(6) {
 	border-top: 1px solid #ccc;
 	margin: 10px 40px 5px 0;
 	padding: 10px 0 0;
 }
-.preamble h3 {
-	text-indent: 100%;
-	white-space: nowrap;
-	overflow: hidden;
-}
-
-
-.explanation {
-	background: url(so_what_bg.gif) no-repeat top right transparent;
-}
-.explanation h3 {
-	margin: 0 15px 20px 0;
-	padding: 0;
-	height: 36px;
-	background: url(so_what.jpg) no-repeat transparent;
-
-	text-indent: 100%;
-	white-space: nowrap;
-	overflow: hidden;
-}
-
-
 .sidebar {
 	position: absolute;
 	top: 130px;
 	left: 608px;
+	width: 200px;
 	margin: 0;
 	padding: 0;
-	width: 200px;
 }
 .sidebar h3.select {
-	margin: 0;
-	padding: 0;
-	background: url(select.jpg) no-repeat transparent;
-	height: 26px;
+	background: url(./select.jpg) no-repeat transparent;
 }
 .sidebar h3.archives {
-	margin: 0;
-	padding: 0;
-	background: url(archives.jpg) no-repeat transparent;
-	height: 26px;
+	background: url(./archives.jpg) no-repeat transparent;
 }
 .sidebar h3.resources {
-	margin: 0;
-	padding: 0;
-	background: url(resources.jpg) no-repeat transparent;
-	height: 26px;
+	background: url(./resources.jpg) no-repeat transparent;
 }
 .sidebar h3 {
+	margin: 0;
+	padding: 0;
 	text-indent: 100%;
-	white-space: nowrap;
 	overflow: hidden;
+	white-space: nowrap;
+	height: 26px;
 }
-
-
-
 .sidebar .design-selection a {
 	text-decoration: underline;
 	color: #766;
@@ -196,7 +130,6 @@ h2 {
 	color: #aaa;
 }
 .sidebar .design-selection a:hover {
-	text-decoration: underline;
 	color: #e60;
 }
 .sidebar .design-selection a.designer-name {
@@ -205,34 +138,29 @@ h2 {
 	color: #888;
 }
 .sidebar .design-selection a.designer-name:visited {
-	text-decoration: none;
 	color: #999;
 }
-.sidebar .design-selection a.designer-name:hover {
+.sidebar .design-selection a.designer-name {
 	text-decoration: none;
 	color: #e60;
 }
-
-
-
 footer {
 	position: relative;
 	margin: 25px 15px 0 -14px;
 	padding: 3px 0 0 20px;
-	background: url(foot.jpg) no-repeat;
 	height: 23px;
+	background: url(./foot.jpg);
 }
 footer a {
 	color: #fff;
 	vertical-align: middle;
 }
-
 ul {
 	margin: 7px 0 7px 20px;
 	padding: 0;
 }
 li {
-	margin: 0 0 5px;
+	margin: 0 5px;
 	padding: 0;
-	list-style-type: none;
+	list-style: none;
 }
