@@ -1,324 +1,175 @@
-/* css Zen Garden submission 022 - 'viridity' by Laura MacArthur - http://www.tunnel-vision.org/ */
-/* css released under Creative Commons ShareAlike License v1.0 - http://creativecommons.org/licenses/sa/1.0/  */
-/* All associated graphics copyright 2003,  Laura MacArthur */
-
-
-/* IMPORTANT */
-/* This design is not a template. You may not reproduce it elsewhere without the designer's written permission. */
-/* The CSS itself may freely be used for anything you wish, but the associated graphics belong to the designer. */
-/* What you may use - .css files. What you may not use - .jpg, .gif, and .png files. */
-
-
-/* based once upon a time on the css Zen Garden default style v1.01 Dave Shea*/
-/* basic stuff */
-html>body, html>body td, html>body th {
-	font-size: small;
-}
-body { 
-	font: 10px/16px Arial, Helvetica, sans-serif; 
-	color: #330033; 
-	background: #669999 url(z_bgrnd.gif) repeat-x 0px 1px; 
-	margin: 0px; 
-	}
-/*rinse and repeat*/
-div, p, th, td, li, dd, dl, dt    {
-    font-family: Arial, Helvetica, sans-serif;
+body {
+	font: 10px/16px '隶书';
+	color: #330033;
+	background: #669999 url(./z_bgrnd.gif) repeat-x 0 1px;
+	margin: 0;
 }
 p {
-	font: 10px/18px Arial, Helvetica, sans-serif;
-	margin-right: 15px;
-	margin-left: 20px;
-	margin-top: 5px;
-	margin-bottom: 5px;
-	padding-right: 15px;
-	padding-left: 20px;
-	padding-top: 5px;
-	padding-bottom: 5px;
+	margin: 5px 15px 5px 20px;
+	padding: 5px 15px 5px 20px;
 	letter-spacing: 1px;
 	text-align: justify;
-	}
+}
 h3 {
 	color: #336666;
-	background-color: transparent;
-	font: bold 14px "Trebuchet MS", Arial, Helvetica, sans-serif;
+	background: transparent;
+	font: bold 14px '隶书';
 	letter-spacing: 4px;
-	text-transform: lowercase;
-	}
-a:link {
-	color: #CCFFFF;
-	background-color: transparent;
-	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-	font-weight: bold;
-	text-decoration: none;
-	}
-a:visited {
-	color: #003333;
-	background-color: #669999;
-	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-	font-weight: bold;
-	text-decoration: none;
-	}
-a:hover, a:active {
-	color: #006666;
-	background-color: #CCFFFF;
-	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-	font-weight: bold;
-	text-decoration: none;
-	}
-/* specific divs */
-/*outermost div*/
+}
 .page-wrapper {
 	position: absolute;
-	margin-top: 0px;
-	top: 0px;
-	left: 0px;
+	top: 0;
+	left: 0;
 	width: 75%;
-	height: auto;
-	z-index: 2;
 	padding-left: 130px;
-	}
-/* where the logos are */
+	z-index: 2;
+}
 header {
 	width: 575px;
 	height: 65px;
 	position: absolute;
-	left: 0px;
-	top: 0px;
+	left: 0;
+	top: 0;
 	padding-top: 31px;
-	}
-/* using an image to replace text in an h1. This trick courtesy Douglas Bowman, http://www.stopdesign.com/articles/css/replace-text/ */
-/*and this trick totally rocks*/
+}
 header h1 {
-	background: transparent url(zh1_combo.gif) no-repeat 0px 0px;
+	background: transparent url(./zh1_combo.gif);
 	width: 575px;
 	height: 65px;
-	float: left;
-	top: 0px;
-	margin-top: 0px;
-
 	text-indent: 100%;
-	white-space: nowrap;
 	overflow: hidden;
-	}
-header h2 {
-	display:none;
-	}
-.preamble h3 {
-	background: #CCFFFF url(h3_preamble.gif) no-repeat left top;
-	color: #003333;
-	margin-top:0px;
-	margin-bottom:0px;
-	height: 25px;
-	border-bottom-width: 3px;
-	border-bottom-style: solid;
-	border-bottom-color: #003333;
-
-	text-indent: 100%;
 	white-space: nowrap;
-	overflow: hidden;
+	margin: 0;
 }
-.explanation h3 {
-	background: #CCFFFF url(h3_support1.gif) no-repeat left top;
-	color: #003333;
-	margin-top:0px;
-	margin-bottom:0px;
-	height: 25px;
-	border-bottom-width: 3px;
-	border-bottom-style: solid;
-	border-bottom-color: #003333;
-	border-top-width: 1px;
-	border-top-style: solid;
-	border-top-color: #003333;
-
-	text-indent: 100%;
-	white-space: nowrap;
-	overflow: hidden;
-	}
-.participation h3 {
-	background: #CCFFFF url(h3_support2.gif) no-repeat left top;
-	color: #003333;
-	margin-top:0px;
-	margin-bottom:0px;
-	height: 25px;
-	border-bottom-width: 3px;
-	border-bottom-style: solid;
-	border-bottom-color: #003333;
-	border-top-width: 1px;
-	border-top-style: solid;
-	border-top-color: #003333;
-
-	text-indent: 100%;
-	white-space: nowrap;
-	overflow: hidden;
-	}
-.benefits h3 {
-	background: #CCFFFF url(h3_support3.gif) no-repeat left top;
-	color: #003333;
-	margin-top:0px;
-	margin-bottom:0px;
-	height: 25px;
-	border-bottom-width: 3px;
-	border-bottom-style: solid;
-	border-bottom-color: #003333;
-	border-top-width: 1px;
-	border-top-style: solid;
-	border-top-color: #003333;
-
-	text-indent: 100%;
-	white-space: nowrap;
-	overflow: hidden;
-	}
-.requirements h3 {
-	background: #CCFFFF url(h3_support4.gif) no-repeat left top;
-	color: #003333;
-	margin-top:0px;
-	margin-bottom:0px;
-	height: 25px;
-	border-bottom-width: 3px;
-	border-bottom-style: solid;
-	border-bottom-color: #003333;
-	border-top-width: 1px;
-	border-top-style: solid;
-	border-top-color: #003333;
-
-	text-indent: 100%;
-	white-space: nowrap;
-	overflow: hidden;
-	}
-/* blurb */
+header h2 {
+	display: none;
+}
 .summary {
-	color: #CCCCCC;
-	background-color: transparent;
+	color: #ccc;
+	background: transparent;
 	width: 75%;
-	height: auto;
 	display: block;
 	padding-top: 125px;
-	}
-.summary p {
-	font: italic normal 10px/16px "Trebuchet MS", Arial, Helvetica, sans-serif;
-	text-align:left;
-	padding-top: 5px;
-	}
-/* written intro - first paragraph */
+	height: auto;
+}
 .preamble {
-	color: #333333;
-	background-color: #99CCCC;
+	color: #333;
+	background-color: #9cc;
 	width: 70%;
-	clear: right;
 	margin-bottom: 10px;
 	padding-bottom: 10px;
-	border: 1px solid #003333;
-	}
-.preamble a:link {
-	color: #CCFFFF;
-	background-color: #669999;
+	border: 1px solid #033;
 }
-.preamble a:hover, a:active {
-	color: #006666;
-	background-color: #CCFFFF;
-	}
-/* the rest */
+.preamble h3 {
+	background: #cff url(./h3_preamble.gif) no-repeat left top;
+	height: 25px;
+	text-indent: 100%;
+	overflow: hidden;
+	white-space: nowrap;
+	margin: 0;
+	border-bottom: 3px solid #033;
+}
 .supporting {
-	color: #333333;
-	background-color: #99CCCC;
+	color: #333;
 	width: 70%;
-	clear: right;
 	height: auto;
-	border: 1px solid #003333;
-	background-image: url(z_twig.gif);
-	background-repeat: no-repeat;
-	background-position: right bottom;
-	}
-.supporting a:link {
-	color: #CCFFFF;
-	background-color: #669999;
+	background:#9cc url(./z_twig.gif) no-repeat right bottom;
+	border: 1px solid #033;
 }
-.supporting a:hover, a:active {
-	color: #006666;
-	background-color: #CCFFFF;
-	}
+.supporting h3 {
+	color: #033;
+	margin: 0;
+	height: 25px;
+	border-bottom: 3px solid #033;
+	border-top: 1px solid #033;
+	text-indent: 100%;
+	overflow: hidden;
+	white-space: nowrap;
+}
+.explanation h3  {
+	background: #cff url(./h3_support1.gif) no-repeat top left;
+}
+.participation h3 {
+	background:#cff url(./h3_support2.gif) no-repeat top left;
+}
+.benefits h3 {
+	background: #cff url(./h3_support3.gif) no-repeat top left;
+}
+.requirements h3 {
+	background: #cff url(./h3_support4.gif) no-repeat top left;
+}
 footer {
-	color: #CCCCCC;
-	background-color: #006666;
+	color: #ccc;
+	background-color: #066;
 	text-align: center;
-	border: 1px solid #003333;
-	background-image: url(z_trim.png);
-	background-repeat: repeat-x;
-	background-position: 0px 0px;
+	background: url(./z_trim.png) repeat-x 0 0;
 	height: 32px;
-	}
-/* link-tastic */
+}
 .sidebar {
 	position: absolute;
 	top: 114px;
-	left: 0px;
-	z-index: auto;
-	}
+	left: 0;
+}
 .sidebar .wrapper {
-	color: #333333;
+	width: 130px;
+	color: #333;
 	background-color: transparent;
-	font: 10px "Trebuchet MS", Arial, Helvetica, sans-serif;
+	padding: 0 0 10px;
+	margin: 0 0 10px 0;
+	border-right: 1px solid #033;
+}
+.sidebar h3 {
 	width: 130px;
-	height: auto;
-	padding: 0px 0px 10px;
-	margin-top: 0px;
-	text-align: right;
-	margin-right: 0px;
-	margin-bottom: 10px;
-	margin-left: 0px;
-	border-right-width: 1px;
-	border-right-style: solid;
-	border-right-color: #003333;
-	}
+	text-indent: 100%;
+	overflow: hidden;
+	white-space: nowrap;
+}
 .sidebar h3.select {
-	background: transparent url(zh3_select.gif) no-repeat 0px 0px;
-	margin: 0px 0px 5px;
-	width: 130px;
+	background: transparent url(./zh3_select.gif) no-repeat 0 0;
+	margin: 0 0 5px;
 	height: 100px;
-
-	text-indent: 100%;
-	white-space: nowrap;
-	overflow: hidden;
-	}
+}
 .sidebar h3.archives {
-	background: transparent url(zh3_arch.gif) no-repeat left top;
-	margin: 25px 0px 5px;
-	width:130px;
+	background: transparent url(./zh3_arch.gif) no-repeat 0 0;
+	margin: 25px 0 5px;
 	height: 50px;
-
-	text-indent: 100%;
-	white-space: nowrap;
-	overflow: hidden;
-	}
-.sidebar h3.resources { 
-	background: transparent url(zh3_res.gif) no-repeat left top; 
-	margin: 25px 0px 5px; 
-	width:130px; 
-	height: 50px; 
-
-	text-indent: 100%;
-	white-space: nowrap;
-	overflow: hidden;
-	}
+}
+.sidebar h3.resources {
+	background: transparent url(./zh3_res.gif) no-repeat 0 0;
+	margin: 25px 0 5px;
+	height: 50px;
+}
 .sidebar ul {
-	margin: 0px 5px;
-	padding: 0px 5px;
-	}
+	margin: 0 5px;
+	padding: 0 5px;
+}
 .sidebar li {
-	line-height: 2.5ex; 
-	list-style-type: none; 
-	display: block; 
-	padding-top: 5px; 
+	line-height: 2.5em;
+	list-style: none;
+	display: block;
+	padding-top: 5px;
 	margin-bottom: 5px;
-	}
-/* leaf */
+}
 .extra1 {
-	background-image: url(z_cont.gif);
-	background-repeat: no-repeat;
 	position: absolute;
-	z-index: 1;
-	left: 315px;
 	top: 114px;
+	left: 315px;
 	height: 299px;
 	width: 330px;
+	background: url(./z_cont.gif) no-repeat;
+	z-index: 1;
+} 
+a:link {
+	color: #cff;
+	background-color: transparent;
+	font-weight: bold;
+	text-decoration: none;
+}
+a:visited {
+	color: #033;
+	background-color: #699;
+}
+a:hover, a:active {
+	color: #066;
+	background-color: #cff;
 }
