@@ -164,7 +164,11 @@ aside ul {
 	border: 1px solid #776;
 }
 aside li {
-	padding: 0;
+	padding: 3px;
+	border-bottom: 1px solid #887;
+}
+aside li:last-child {
+	border-bottom: none;
 }
 aside > div > div:hover  ul {
 	display: block;
