@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+    <canvas id="canvas" style="display:block;margin:50px auto;border:1px solid #aaa;">
+        您的浏览器尚不支持canvas
+    </canvas>
+
+    <script>
+
+        window.onload = function(){
+            var canvas = document.getElementById("canvas");
+            canvas.width = 800;
+            canvas.height = 800;
+            var context = canvas.getContext("2d");  
+            context.fillStyle = "#000";
+            context.fillRect(0, 0, canvas.width, canvas.height);
+            for (let i = 0; i < 200; i++) {
+                var r = Math.random() * 10 + 10;
+                var x=Math.abs(Math.random()*canvas.width-2*r)+r;
+                var y=Math.abs(Math.random()*canvas.height-2*r)+r;
+                var a = Math.random() * 360;
+                drawStar(context, x, y, r, r / 2.0, a);
+            }
+        }
+        function drawStar(ctx, x, y, outerR, innerR, rot) {         
+            ctx.beginPath();
+            for (let i = 0; i < 5; i++) {
+                ctx.lineTo(Math.cos((18 + i * 72 - rot) / 180 * Math.PI) * outerR + x, 
+                               -Math.sin((18 + i * 72 - rot) / 180 * Math.PI) * outerR + y);
+                ctx.lineTo(Math.cos((54 + i * 72 - rot) / 180 * Math.PI) * innerR + x, 
+                -Math.sin((54 + i * 72 - rot) / 180 * Math.PI) * innerR + y);                
+            }
+            ctx.closePath();
+            var fColor="rgba("+
+                Math.floor(Math.random()*255)+","+
+                Math.floor(Math.random()*255)+","+
+                Math.floor(Math.random()*255)+","+
+                (Math.random()*0.3+0.5)+ ")";
+            ctx.fillStyle=fColor;
+            ctx.strokeStyle = "#fd5";
+            ctx.lineWidth = 3;
+            ctx.lineJoin = "round";
+            ctx.fill();
+            ctx.stroke();
+        }
+    </script>
+</body>
+</html>

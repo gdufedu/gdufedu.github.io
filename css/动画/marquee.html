@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./marquee.css">
+</head>
+<body>
+    <!-- <marquee behavior="" direction="">我要好好的努力，这样才能娶到漂亮的媳妇，贤惠的媳妇</marquee> -->
+    <div class="marquee">
+        <div class="content">
+            <div class="list"><img src="./timg.jpg" alt=""></div>
+            <div class="list"><img src="./timg1.jpg" alt=""></div>
+            <div class="list"><img src="./timg2.jpg" alt=""></div>
+        </div>
+    </div>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(() => {
+            var outerWidth = 600,
+                outerHeight = 200,
+                speed = 3;
+            var $marquee = $('.marquee');
+            var $content = $marquee.find('.content');
+            var $list = $content.find('.list');
+            var listLength = $list.length;
+            var contentWidth = outerWidth * listLength;
+            var style = document.styleSheets;
+            $marquee.css({
+                "width": `${outerWidth}px`,
+                "height":`${outerHeight}px`
+            });
+            $list.css({
+                "width": `${outerWidth}px`,
+                "height":`${outerHeight}px`
+            });
+            $content.css({
+                "width": `${contentWidth}px`,
+                "height":`${outerHeight}px`,
+                "animation": `run ${speed * listLength}s linear infinite`
+            });
+            var clone = $list.eq(0).clone();
+            $content.append(clone);
+            style[0].insertRule(`
+                @keyframes run {
+                    100% {
+                        transform: translateX(-${contentWidth}px);
+                    }
+                }
+            `);
+            
+        });
+    </script>
+</body>
+</html>

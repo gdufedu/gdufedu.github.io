@@ -1,0 +1,13 @@
+.marquee {
+  overflow: hidden; }
+
+.content {
+  display: flex; }
+  .content .list {
+    overflow: hidden;
+    flex-shrink: 0; }
+    .content .list img {
+      width: 100%;
+      height: 100%; }
+
+/*# sourceMappingURL=marquee.css.map */

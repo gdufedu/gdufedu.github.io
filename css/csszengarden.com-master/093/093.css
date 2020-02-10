@@ -1,0 +1,132 @@
+body {
+	color: #fff;
+	background: #ededed url(./background.gif) repeat-y fixed bottom;
+	margin: 0;
+	font: 83%/150% 黑体;
+}
+p {
+	margin-top: 0;
+}
+a {
+	color: #97abc3;
+	text-decoration: none;
+}
+a:hover, a:active {
+	text-decoration: underline;
+}
+.page-wrapper {
+	position: relative;
+	background: url(./bg-central.gif) repeat top left;
+	margin: 0 auto;
+	width: 655px;
+}
+h1, h3 {
+	text-indent: 100%;
+	overflow: hidden;
+	white-space: nowrap;
+}
+h1 {
+	margin: 0;
+	background: url(./top.gif) no-repeat top left;
+	width: 655px;
+	height: 206px;
+}
+h2 {
+	display: none;
+}
+.summary, .preamble, .supporting {
+	padding-top: 2px;
+	border-bottom: 1px dashed #8095af;
+	margin: 0 200px 0 68px;
+}
+.summary {
+	margin-top: 10px;
+}
+.preamble h3 {
+	background: url(./ch1.gif) no-repeat top left;
+	height: 44px;
+	width: 388px;
+	margin: 10px 0 5px 0;
+}
+.supporting > div {
+	border-bottom: 1px dashed #8095af;
+}
+.supporting > div > h3 {
+	margin: 10px 0 5px 0;
+	width: 388px;
+	height: 44px;
+}
+.explanation h3 {
+	background: url(./ch2.gif);
+}
+.participation h3 {
+	background: url(./ch3.gif);
+}
+.benefits h3 {
+	background: url(./ch4.gif);
+}
+.requirements h3 {
+	background: url(./ch5.gif);
+}
+.requirements {
+	margin-bottom: -80px;
+}
+footer {
+	margin: 0 -200px 0 -68px;
+	padding-top: 88px;
+	text-align: center;
+	height: 37px;
+	background: url(./bottom.gif) no-repeat;
+}
+footer a {
+	margin-right: 20px;
+}
+aside {
+	position: absolute;
+	top: 207px;
+	right: 6px;
+	width: 181px;
+	font-size: 70%;
+	color: #844645;
+}
+aside ul {
+	margin: 0;
+	padding: 0;
+}
+aside li {
+	list-style: none;
+	background: url(./li-bg.gif) repeat top center;
+	padding: 8px 6px;
+	border-top: 1px solid #5d4831;
+	border-bottom: 1px solid #221609;
+	display: block;
+}
+aside a {
+	color: #9e866b;
+}
+.design-selection a {
+	color: #97abc3;
+	font-size: 120%;
+	display: block;
+}
+a.designer-name {
+	font-size: 100%;
+	display: inline;
+}
+aside h3 {
+	margin: 2px 0 0 0;
+	width: 182px;
+	height: 30px;
+}
+h3.select {
+	background: url(./h3.gif);
+}
+.design-archives, .zen-resources {
+	padding-top: 10px;
+}
+h3.archives {
+	background: url(./h5.gif);
+}
+h3.resources {
+	background: url(./h6.gif);
+}

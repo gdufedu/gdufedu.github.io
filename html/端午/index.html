@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>棕情端午</title>
+    <style>
+        @-webkit-keyframes rock {
+            0% {
+                transform: rotate(0deg);
+            }
+            10% {
+                transform: rotate(3deg);
+            }
+            20% {
+                transform: rotate(-3deg);
+            }
+            30% {
+                transform: rotate(2deg);
+            }
+            40% {
+                transform: rotate(-2deg);
+            }
+            50% {
+                transform: rotate(1deg);
+            }
+            60% {
+                transform: rotate(-1deg);
+            }
+            70% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(0deg);
+            }
+        }
+        * {
+            padding: 0;
+            margin: 0;            
+        }
+        body {
+            background: #000;
+            -webkit-font-smoothing: antialiased;
+            font-family: 'WenQuanYi Micro Hei',SimSun,sans-serif;
+        }
+        .main {
+            width: 1200px;
+            max-width: 100%;
+            height: 600px;
+            background: url(img/bg.jpg) no-repeat;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            overflow: hidden;
+        }
+        .c_zongzi_box {
+            max-width: 30%;
+            position: absolute;
+            left: 700px;
+            top: 184px;
+            width: 312px;
+            height: 305px;
+        }
+        .c_zongzi_box_rock {
+            -webkit-animation: rock 2s infinite;
+        }
+        .c_zongzi {
+            width: 312px;
+            height: 305px;
+            background: url(img/zz.png);
+            opacity: 1;
+            transition: all 1s;
+        }
+        .c_zongzi_out {
+            opacity: 0;
+            transform: scale(.5);
+        }
+        .c_shengzi_1 {
+            width: 218px;
+            height: 180px;
+            background: url(img/line_1.png);
+            position: absolute;
+            left: 10px;
+            top: 120px;
+            z-index: 999;
+            cursor: pointer;
+        }
+        .c_shengzi_2 {
+            width: 219px;
+            height: 159px;
+            background: url(img/line_2.png);
+            position: absolute;
+            left: 10px;
+            top: 158px;            
+        }
+        .c_shengzi_3 {
+            width: 264px;
+            height: 117px;
+            background: url(img/line_3.png);
+            position: absolute;
+            left: 10px;
+            top: 220px;                
+        }
+        .c_shengzi_4 {
+            width: 288px;
+            height: 56px;
+            background: url(img/line_4.png);
+            position: absolute;
+            left: 10px;
+            top: 290px;               
+        }
+        .c_shengzi_0 {
+            display: none;
+        }
+        .c_zongzirou {
+            width: 288px;
+            height: 206px;
+            background: url(img/zzr_1.png);
+            background-size: 288px 206px;
+            position: absolute;
+            left: 50px;
+            top: 54px;
+            z-index: 101;
+            opacity: 0;
+            transform-origin: top center;
+            transition: all 1s;
+            transform: scale(.8);
+        }
+        .c_zongzirou_in {
+            opacity: 1;
+            transform: scale(1);
+        }
+        .c_zuoye {
+            width: 114px;
+            height: 266px;
+            background: url(img/leaf_left.png);
+            position: absolute;
+            left: 20px;
+            top: -50px;
+            z-index: 1;
+            opacity: 0;
+            transform-origin: left bottom;
+            transition: all 1s;
+        }
+        .c_zuoye_in {
+            opacity: 1;
+            transform: rotate(-5deg);
+        }
+        .c_zuoye_out {
+            opacity: 0;
+            transform: rotate(-15deg);
+        }
+        .c_youye {
+            width: 318px;
+            height: 338px;
+            background: url(img/leaf_right.png);
+            position: absolute;
+            left: 90px;
+            top: -60px;
+            z-index: 111;
+            opacity: 0;
+            transform-origin: left bottom;
+            transition: all 1s;
+            transform: scale(.8);
+        }
+        .c_youye_in{
+            opacity: 1;
+            transform: rotate(5deg) scale(.8);
+        }
+        .c_youye_out{
+            opacity: 0;
+            transform: rotate(15deg) scale(.8);
+        }
+        .c_diye {
+            width: 618px;
+            height: 468px;
+            background: url(img/leaf_expand.png);
+            position: absolute;
+            left: -150px;
+            top: -60px;
+            z-index: 99;
+            opacity: 0;
+            transition: all 1s;
+        }
+        .c_diye_in {
+            opacity: 1;
+        }
+        .c_t_1 {
+            width: 180px;
+            height: 100px;
+            background: url(img/t_jixiang.png);
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -70px;
+            margin-top: -50px;
+            z-index: 200;
+            transform: scale(.8);
+            transform-origin: center center;
+            opacity: 0;
+            transition: all 1s;
+        }
+        .c_t_2 {
+            width: 180px;
+            height: 100px;
+            background: url(img/t_ruyi.png);
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -70px;
+            margin-top: -50px;
+            z-index: 200;
+            transform: scale(.8);
+            transform-origin: center center;   
+            opacity: 0;
+            transition: all 1s;         
+        }
+        .c_t_in {
+            opacity: 1;
+        }
+        .text {
+            position: absolute;
+            width: 400px;
+            height: 370px;
+            left: 180px;
+            top: 140px;
+            font-size: 14px;
+            line-height: 20px;
+            color: #333;
+        }
+        .text .caption {
+            width: 400px;
+            height: 240px;
+            background: url(img/caption.png) no-repeat;
+            margin-left: 40px;
+            opacity: 0;
+            transition: all 1s;
+        }
+        .text .caption_rock {
+            -webkit-animation: rock 4s infinite;
+        }
+        .text .to {
+            width: 400px;
+            margin-top: 10px;
+            margin-left: 40px;
+            opacity: 0;
+            transition: all 1s .5s;
+        }
+        .text .msg {
+            width: 400px;
+            margin-top: 10px;
+            margin-left: 40px;
+            opacity: 0;
+            transition: all 1s 1s;
+        }
+        .text .from{
+            width: 400px;
+            margin-top: 10px;
+            margin-left: 40px;
+            text-align: right;
+            opacity: 0;
+            transition: all 1s 1.5s;
+        }
+        .text_in .caption,
+        .text_in .to,
+        .text_in .msg,
+        .text_in .from {
+            opacity: 1;
+            margin-left: 0;
+        }
+        .c_zongzirou_view_1 {
+            transition: all 0s;
+            background-image: url(img/zzr_1.png);
+        }
+        .c_zongzirou_view_2 {
+            transition: all 0s;
+            background-image: url(img/zzr_2.png);
+        }
+        .c_zongzirou_view_3 {
+            transition: all 0s;
+            background-image: url(img/zzr_3.png);
+        }
+        .c_zongzirou_view_4 {
+            transition: all 0s;
+            background-image: url(img/zzr_4.png);
+        }
+        .c_zongzirou_view_0 {
+            transition: all 0s;
+            background-image: url(img/zzr_1.png);
+            transform: rotateY(180deg);
+        }
+        .c_t_view_0 {
+            transition: all 0s;
+            transform: scale(.8);
+        }
+        .c_t_mirror_0 {
+            transition: all 0s;
+            display: none;
+        }
+        .c_t_view_2 {
+            transition: all 0s;
+            transform: scale(.8) rotateY(30deg) translate(-50px,0) rotate(8deg);
+        }
+        .c_t_mirror_2 {
+            transition: all 0s;
+            transform: scale(.7) rotateY(70deg) translate(283px,-15px) rotate(-8deg);
+        }
+        .c_t_view_3 {
+            transition: all 0s;
+            transform: scale(.75) rotateY(49deg) translate(-94px,0) rotate(15deg);
+        }
+        .c_t_mirror_3 {
+            transition: all 0s;
+            transform: scale(.75) rotateY(49deg) translate(118px,0) rotate(-15deg);
+        }
+        .c_t_view_4 {
+            transition: all 0s;
+            transform: scale(.6) rotateY(50deg) translate(-196px,10px) rotate(24deg);
+        }
+        .c_t_mirror_4 {
+            transition: all 0s;
+            transform: scale(.8) rotateY(30deg) translate(58px,10px) rotate(-5deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="c_zongzi_box" id="c_zongzi_box">
+            <div class="c_zongzi" id="c_zongzi"></div>
+            <div class="c_shengzi_1" id="c_shengzi"></div>
+            <div class="c_zongzirou" id="c_zongzirou"></div>
+            <div class="c_zuoye" id="c_zuoye"></div>
+            <div class="c_youye" id="c_youye"></div>
+            <div class="c_diye" id="c_diye"></div>
+            <div class="c_t_1" id="c_t_1"></div>
+            <div class="c_t_2" id="c_t_2"></div>
+        </div>
+        <div class="text" id="text">
+            <div class="caption" id="caption"></div>
+            <div class="to">巧克力的小伙伴们:</div>
+            <div class="msg">在端午节来临之际，巧克力给大家送来心意了，祝大家好运、吉祥、如意、幸福、快快乐乐每一天，巧克力会在每个节日送上祝福语~!</div>
+            <div class="from">巧克力</div>
+        </div>
+    </div>
+    <script>
+        let g = function(id) {
+            return document.getElementById(id);
+        };
+        let Timeline = function() {
+            this.order = [];
+            this.add = function(timeout, func, log) {
+                this.order.push({
+                    timeout:timeout,
+                    func:func,
+                    log:log
+                });
+            };
+            this.start = function(ff) {
+                for( s in this.order) {
+                    (function(me){
+                        let fn = me.func;
+                        let timeout = me.timeout;
+                        let log = me.log;
+                        timeout = Math.max(timeout - (ff || 0), 0);
+                        setTimeout(fn, timeout);
+                        setTimeout(() => {
+                            console.log('time->',timeout,'log->',log);
+                            
+                        }, timeout);
+                    })(this.order[s]);
+                }
+            };
+        };
+        let s1 = new Timeline();
+        let s2 = new Timeline();
+        let s3 = new Timeline();
+        s1.add(1,function(){
+            g('c_zongzi_box').className = 'c_zongzi_box c_zongzi_box_rock';
+            g('c_shengzi').onclick = function() {
+                s2.start();
+                g('c_shengzi').onclick = function() {
+
+                };
+            };
+        });
+        s2.add(1,function(){
+            g('c_zongzi_box').className = 'c_zongzi_box';
+            g('text').className = 'text text_in';
+        });
+        s2.add(100,function(){
+            g('c_shengzi').className = 'c_shengzi_2';
+        });
+        s2.add(500,function(){
+            g('c_shengzi').className = 'c_shengzi_3';
+        });
+        s2.add(1000,function(){
+            g('c_shengzi').className = 'c_shengzi_4';
+            g('caption').className = 'caption caption_rock';
+        });
+        s2.add(1500,function(){
+            g('c_shengzi').className = 'c_shengzi_0';
+        });
+        s2.add(2000,function(){
+            g('c_zongzi').className = 'c_zongzi c_zongzi_out';
+            g('c_zongzirou').className = 'c_zongzirou c_zongzirou_in';
+            g('c_zuoye').className = 'c_zuoye c_zuoye_in';
+            g('c_youye').className = 'c_youye c_youye_in';
+            g('c_t_1').className = 'c_t_1 c_t_in';
+            g('c_t_2').className = 'c_t_2 c_t_mirror_0';
+
+        });
+        s2.add(3000,function(){
+            g('c_zuoye').className = 'c_zuoye c_zuoye_in c_zuoye_out';
+            g('c_youye').className = 'c_youye c_youye_in c_youye_out';
+            g('c_diye').className = 'c_diye c_diye_in';
+            s3.start();
+        })
+        s3.add(1000,function () {
+            g('c_zongzirou').className = 'c_zongzirou c_zongzirou_in c_zongzirou_view_1';
+        });
+        s3.add(1200,function () {
+            g('c_zongzirou').className = 'c_zongzirou c_zongzirou_in c_zongzirou_view_2';
+            g('c_t_1').className = 'c_t_1 c_t_in c_t_view_2';
+            g('c_t_2').className = 'c_t_2 c_t_in c_t_mirror_2';
+        });
+        s3.add(1400,function () {
+            g('c_zongzirou').className = 'c_zongzirou c_zongzirou_in c_zongzirou_view_3';
+            g('c_t_1').className = 'c_t_1 c_t_in c_t_view_3';
+            g('c_t_2').className = 'c_t_2 c_t_in c_t_mirror_3';
+        });
+        s3.add(1600,function () {
+            g('c_zongzirou').className = 'c_zongzirou c_zongzirou_in c_zongzirou_view_4';
+            g('c_t_1').className = 'c_t_1 c_t_in c_t_view_4';
+            g('c_t_2').className = 'c_t_2 c_t_in c_t_mirror_4';
+        });
+        s3.add(1800,function () {
+            g('c_zongzirou').className = 'c_zongzirou c_zongzirou_in c_zongzirou_view_0';
+            g('c_t_1').className = 'c_t_1 c_t_in c_t_mirror_0';
+            g('c_t_2').className = 'c_t_2 c_t_in c_t_view_0';
+        });
+        s3.add(3000,function () {
+            g('c_zongzirou').className = 'c_zongzirou c_zongzirou_in c_zongzirou_view_4';
+            g('c_t_1').className = 'c_t_1 c_t_in c_t_view_4';
+            g('c_t_2').className = 'c_t_2 c_t_in c_t_mirror_4';
+        });
+        s3.add(3200,function () {
+            g('c_zongzirou').className = 'c_zongzirou c_zongzirou_in c_zongzirou_view_3';
+            g('c_t_1').className = 'c_t_1 c_t_in c_t_view_3';
+            g('c_t_2').className = 'c_t_2 c_t_in c_t_mirror_3'; 
+        });
+        s3.add(3400,function () {
+            g('c_zongzirou').className = 'c_zongzirou c_zongzirou_in c_zongzirou_view_2';
+            g('c_t_1').className = 'c_t_1 c_t_in c_t_view_2';
+            g('c_t_2').className = 'c_t_2 c_t_in c_t_mirror_2';
+        });
+        s3.add(3600,function () {
+            g('c_zongzirou').className = 'c_zongzirou c_zongzirou_in c_zongzirou_view_1';
+            g('c_t_1').className = 'c_t_1 c_t_in c_t_view_0';
+            g('c_t_2').className = 'c_t_2 c_t_in c_t_mirror_0';
+        });
+        s3.add(5000,function (){
+            s3.start();
+        });
+        s1.start();
+        let imgs = ['img/zzr_2.png','img/zzr_3.png','img/zzr_4.png'];
+        let imgs_onload = function() {
+            imgs.pop();
+            if (imgs.length == 0) {
+                s1.start();
+            }
+        };
+        for (s in imgs) {
+            let img = new Image;
+            img.onload = imgs_onload;
+            img.src = imgs[s];
+        }
+    </script>
+</body>
+</html>

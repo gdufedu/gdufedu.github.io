@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Title Page</title>
+
+        <!-- Bootstrap CSS -->
+        <link href="bootstrap.min.css" rel="stylesheet">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.3/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <h1 class="text-center">Hello Lily ~</h1>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-push-4 col-sm-4" id="hexagonTarget" style="height: 200px;">
+                    
+                </div>
+            </div>
+        </div>
+        <!-- jQuery -->
+        <script src="jquery.min.js"></script>
+        <!-- Bootstrap JavaScript -->
+        <script src="bootstrap.min.js"></script>
+        <script>
+            function hexagon(edgeLength, imgSrc, imgWidth, imgHeight, target, offsetX, offsetY) {
+
+                var w = Math.sqrt(3.0) * edgeLength;
+                var h = edgeLength;
+
+                var centerX = ($(target).innerWidth() - w)/2.0;
+                var centerY = ($(target).innerHeight() - h*2.0)/2.0;
+
+                if (offsetX == undefined) offsetX = 0;
+                if (offsetY == undefined) offsetY = 0;
+
+                var r1 = $("<div style='position:absolute; overflow:hidden'></div>");
+                r1.css("width", w).css("height", h).css("left", centerX + offsetX).css("top", h/2.0 + centerY + offsetY);
+
+                var r2 = $(r1).clone();
+                r2.css("transform", "rotate(60deg)").css("-ms-transform", "rotate(60deg)").css("-moz-transform", "rotate(60deg)").css("-webkit-transform", "rotate(60deg)");
+
+                var r3 = $(r1).clone();
+                r3.css("transform", "rotate(-60deg)").css("-ms-transform", "rotate(-60deg)").css("-moz-transform", "rotate(-60deg)").css("-webkit-transform", "rotate(-60deg)");
+
+                var img1 = $("<img src='" + imgSrc + "' width='" + imgWidth + "' height='" + imgHeight + "'></img>");
+                img1.css("margin-left", (w - imgWidth)/2.0).css("margin-top", (h - imgHeight)/2.0);
+
+                var img2 = img1.clone();
+                img2.css("transform", "rotate(-60deg)").css("-ms-transform", "rotate(-60deg)").css("-moz-transform", "rotate(-60deg)").css("-webkit-transform", "rotate(-60deg)");
+
+                var img3 = img1.clone();
+                img3.css("transform", "rotate(60deg)").css("-ms-transform", "rotate(60deg)").css("-moz-transform", "rotate(60deg)").css("-webkit-transform", "rotate(60deg)");
+                
+                img1.appendTo(r1);
+                img2.appendTo(r2);
+                img3.appendTo(r3);
+
+                r1.appendTo(target);
+                r2.appendTo(target);
+                r3.appendTo(target);
+            }
+
+            hexagon(80, "lily.jpg", 200, 200, $("#hexagonTarget"));
+            hexagon(80, "lily.jpg", 200, 200, $("#hexagonTarget"), 72.282, 125);
+            hexagon(80, "lily.jpg", 200, 200, $("#hexagonTarget"), -72.282, 125);
+        </script>
+    </body>
+</html>

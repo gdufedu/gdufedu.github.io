@@ -1,0 +1,32 @@
+body {
+    margin: 0;
+    background: #011500 url(./bk.png) repeat-x;
+}
+.page-wrapper {
+    width: 760px;
+    background: url(./lotus.png) no-repeat;
+    margin: 0 auto;
+    position: relative;
+}
+header {
+    width: 321px;
+    height: 90px;
+    background: url(./header.png) no-repeat;
+    position: absolute;
+    top: 33px;
+    right: 13px;
+}
+header h1, header h2 {
+    display: none;
+}
+.summary p:first-child {
+    display: none;
+}
+.summary p:last-child {
+    position: absolute;
+    top: 123px;
+    right: 15px;
+}
+.preamble, .supporting > div {
+    width: 392px;
+}

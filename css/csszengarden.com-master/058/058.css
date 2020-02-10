@@ -1,0 +1,191 @@
+body {
+	font-size: 10px;
+	background: #f8f8ee url(./schaal.jpg) no-repeat top fixed;
+	margin: 0;
+}
+p {
+	margin-left: 1em;
+	margin-right: 1em;
+}
+.intro {
+	position: absolute;
+	width: 1590px;
+	z-index: 1;
+}
+h1, h2, .intro h3, .supporting h3 {
+	text-indent: 100%;
+	overflow: hidden;
+	white-space: nowrap;
+	background-repeat: no-repeat;
+	background-position: top right;
+}
+h1 {
+	position: absolute;
+	top: 278px;
+	left: 720px;
+	background-image: url(./zen.gif);
+	width: 600px;
+	height: 180px;
+	margin-top: 10px;
+}
+h2 {
+	position: absolute;
+	top: 330px;
+	left: 1280px;
+	margin: 0;
+	width: 321px;
+	height: 194px;
+	background-image: url(./tune.jpg);
+}
+.summary {
+	position: absolute;
+	right: 0;
+	text-align: left;
+	width: 165px;
+	height: 340px;
+	top: 95px;
+	padding-top: 40px;
+}
+.intro p {
+	margin: 3px 8px 8px;
+	color: #555f44;
+}
+a {
+	color: #744646;
+	text-decoration: none;
+	border-bottom: 1px dashed #744646;
+}
+a:hover {
+	color: #000;
+	text-decoration: underline;
+}
+.preamble {
+	position: absolute;
+	left: 10px;
+	text-align: right;
+	width: 165px;
+	top: 95px;
+}
+.preamble h3 {
+	background-image: url(./road.gif);
+	margin-top: 10px;
+	width: 140px;
+	height: 32px;
+	float: left;
+}
+.supporting {
+	position: absolute;
+	width: 1230px;
+	text-align: justify;
+	padding: 95px 0 0 185px;
+	background: url(./naald.gif) no-repeat top;
+	z-index: 3;
+}
+.supporting h3 {
+	margin: 10px 8px 0 3px;
+	height: 32px;
+	float: left;
+	width: 250px;
+}
+.explanation h3 {
+	background-image: url(./sowhat.gif);
+}
+.participation h3 {
+	background: url(./part.gif);
+}
+.benefits h3 {
+	background: url(./ben.gif);
+}
+.requirements h3 {
+	background: url(./rec.gif);
+}
+.supporting > div {
+	width: 290px;
+	float: left;
+}
+.benefits {
+	width: 150px;
+}
+.requirements {
+	width: 500px;
+}
+footer {
+	float: right;
+	padding-right: 50px;
+	top: 0;
+}
+aside {
+	position: absolute;
+	padding-top: 480px;
+	z-index: 3;
+	text-align: justify;
+}
+aside > div > div {
+	position: absolute;
+	padding: 5px;
+}
+.design-selection {
+	width: 1590px;
+	top: 46em;
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: #e8e9cf;
+}
+aside ul {
+	margin: 0;
+	padding: 0;
+}
+.design-archives li {
+	border: none;
+}
+aside h3 {
+	margin: 0;
+	margin-right: 10px;
+	color: #555f44;
+	font-size: 8pt;
+	float: left;
+	font-weight: bold;
+}
+aside li {
+	float: left;
+	list-style: none;
+	border-left: 4px solid #f8f8ee;
+	padding: 0 5px;
+}
+aside a {
+	font-weight: bold;
+	border: none;
+}
+a.designer-name {
+	color: #422222;
+	font-weight: normal;
+}
+.design-archives {
+	width: 300px;
+	top: 49em;
+	left: 75px;
+}
+.design-archives li {
+	border: none;
+}
+.zen-resources {
+	width: 800px;
+	left: 400px;
+	top: 49em;
+	text-align: left;
+}
+.extra1 {
+	position: absolute;
+	width: 1600px;
+	height: 400px;
+	top: 83px;
+	background: url(./bgrnd.gif) top;
+}
+.extra2 {
+	position: absolute;
+	width: 321px;
+	height: 194px;
+	top: 330px;
+	left: 160px;
+	background: url(./radio.jpg) top;
+	z-index: 0;
+}

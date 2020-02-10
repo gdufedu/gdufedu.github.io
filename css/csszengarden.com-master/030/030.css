@@ -1,0 +1,127 @@
+body {
+	background: #b61e3d url(./bkgd.jpg);
+	font: 16px/16px '隶书';
+	color: #390404;
+	margin: 0;
+}
+.page-wrapper {
+	background: #ffc url(./mid.jpg) repeat-y center;
+	width: 760px;
+	margin: 0 auto;
+	position: absolute;
+	left: 50%;
+	margin-left: -380px;
+}
+.intro {
+	margin: 0;
+	background: url(./top.jpg) no-repeat center top;
+	padding-top: 186px;
+}
+header h1, header h2 {
+	display: none;
+}
+.summary {
+	margin-top: 30px;
+}
+.summary, .preamble, .supporting {
+	margin-right: 80px;
+	margin-left: 300px;
+}
+footer {
+	background: url(./bot.jpg) no-repeat center bottom;
+	margin-right: -80px;
+	margin-left: -300px;
+	height: 100px;
+	text-align: center;
+}
+.sidebar {
+	width: 195px;
+	position: absolute;
+	left: 90px;
+	top: 200px;
+	border-right: 1px dotted #930;
+	background: url(./b5.jpg) no-repeat center bottom;
+	padding-bottom: 150px;
+}
+.sidebar h3 {
+	text-align: center;
+	font-style: italic;
+	letter-spacing: 0.1em;
+	margin-top: 30px;
+	padding-top: 110px;
+}
+.sidebar h3.select {
+	margin-top: 0;
+	background:url(./b1.jpg) no-repeat center top;
+}
+.sidebar h3.archives {
+	background:url(./b2.jpg) no-repeat center top;
+}
+.sidebar h3.resources {
+	background:url(./b3.jpg) no-repeat center top;
+	padding-top: 105px;
+}
+.sidebar ul {
+	margin: -0.5em 0 0 0;
+	list-style: none;
+	padding: 0;
+	text-align: center;
+}
+.sidebar li {
+	background: url(./listline.gif) no-repeat center bottom;
+	padding-bottom: 15px;
+}
+.sidebar .design-select a {
+	display: block;
+	letter-spacing: 0.1em;
+	font-style: normal;
+}
+a:link, a:visited {
+	font-style: italic;
+	text-decoration: none;
+	color: #039;
+}
+a:visited {
+	font-style: normal;
+}
+a:hover, a:active {
+	background: #ffe699;
+}
+p {
+	margin-top: -0.8em;
+}
+p + p {
+	text-indent: 15px;
+}
+h3 {
+	font-size: 13px;
+	letter-spacing: 0.3em;
+	margin-top: 2em;
+}
+footer a:link, footer a:visited {
+	font-size: 15px;
+	color: #390404;
+}
+.supporting p:nth-child(6) {
+	margin-left: -300px;
+	text-align: center;
+	margin-right: -80px;
+	height: 30px;
+	margin-top: 30px;
+	background: url(./line.jpg) no-repeat center bottom;
+}
+footer a:before {
+	content: '{';
+}
+footer a:after {
+	content: '}';
+}
+aside h3:before {
+	content: '(';
+}
+aside h3:after {
+	content: ')';
+}
+h3::first-letter {
+	font-size: 16px;
+}

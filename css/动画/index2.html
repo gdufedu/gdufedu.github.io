@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./demo-2-steps.css">
+</head>
+<body>
+    <div class="loading">
+        
+    </div>
+    <div class="tuzi"></div>
+    <script>
+        let runstart = () => {console.log('runstart')};
+        let runend = () => {console.log('runend')};
+        let iteration = () => {console.log('iteration')};
+        let $loading = document.querySelector('.loading');
+        $loading.addEventListener('animationstart', runstart);
+        $loading.addEventListener('animationend', runend);
+        $loading.addEventListener('animationiteration', iteration);
+    </script>
+</body>
+</html>

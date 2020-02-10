@@ -1,0 +1,325 @@
+body {
+	margin: 0;
+	background: #b0a40b url(./bg-1.gif) repeat-x;
+	font-size: small;
+}
+.page-wrapper {
+	background: url(./bg-2.gif) right repeat-y;
+}
+header {
+	height: 171px;
+	background: url(./bg-4.gif) repeat-x;
+}
+header h1, header h2 {
+	text-indent: 100%;
+	overflow: hidden;
+	white-space: nowrap;
+	height: 171px;
+}
+header h1 {
+	margin: 0;
+	float: left;
+	width: 396px;
+	background: url(./cr-tl.jpg);
+}
+header h2 {
+	margin: 0;
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 350px;
+	background: url(./cr-tr.gif);
+}
+.summary p:first-child {
+	width: 310px;
+	height: 67px;
+	background: url(./cr-r1.png);
+	position: absolute;
+	top: 171px;
+	right: 0;
+	text-indent: 100%;
+	overflow: hidden;
+	white-space: nowrap;
+}
+.summary p:last-child {
+	position: absolute;
+	top: 154px;
+	left: 25px;
+	margin: 0;
+	font-size: 10px;
+	color: #cdc667;
+	padding-left: 8px;
+	background: url(./glitch.gif) no-repeat center left;
+}
+.summary a {
+	color: #d9d48c;
+	font-weight: bold;
+	text-decoration: none;
+}
+.summary a:hover {
+	color: #fff;
+	text-decoration: underline;
+}
+.preamble {
+	display: none;
+}
+.supporting {
+	font: 85%/140% 黑体;
+	color: #302d0a;
+	background: #fff;
+	border: solid 1px #997e00;
+	margin-left: 21px;
+	margin-right: 310px;
+	padding: 10px 20px;
+}
+.supporting h3 {
+	text-indent: 100%;
+	overflow: hidden;
+	white-space: nowrap;
+	height: 10px;
+	background-repeat: no-repeat;
+}
+.explanation h3 {
+	background-image: url(./h_sowhat.gif);
+}
+.participation h3 {
+	background-image: url(./h_participation.gif);
+}
+.benefits h3 {
+	background-image: url(./h_benefits.gif);
+}
+.requirements h3 {
+	background-image: url(./h_requirements.gif);
+}
+footer {
+	z-index: 1;
+	position: absolute;
+	top: 64px;
+	left: 150px;
+	text-align: center;
+	width: 257px;
+	height: 32px;
+	padding-top: 13px;
+}
+footer a {
+	display: block;
+	width: 46px;
+	height: 45px;
+	padding: 13px 0 0 0;
+	background: url(./bg-5.png) no-repeat;
+	font-size: 10px;
+	color: #fff;
+	text-decoration: none;
+	position: absolute;
+}
+footer > a + a {
+	left: 53px;
+}
+footer > a + a + a {
+	left: 106px;
+}
+footer > a + a + a + a {
+	left: 159px;
+}
+footer > a + a + a + a + a {
+	left: 212px;
+}
+footer a:hover {
+	background: url(./bg-5a.png) top left no-repeat;
+}
+.design-selection {
+	position: absolute;
+	top: 238px;
+	right: 0;
+	background: url(./cr-r2a.png) top right no-repeat;
+	width: 195px;
+	height: 193px;
+	padding: 10px 60px 10px 55px;
+}
+.design-selection h3 {
+	text-indent: 100%;
+	overflow: hidden;
+	white-space: nowrap;
+	height: 15px;
+	background: url(./h_select.gif) no-repeat;
+	position: relative;
+	left: -20px;
+}
+.design-selection ul {
+	list-style: none;
+	padding: 0;
+}
+.design-selection li {
+	color: #6d6100;
+	letter-spacing: -1px;
+	width: 100px;
+	line-height: 10px;
+	position: relative;
+	left: -14px;
+	font: normal 10px arial,sans-serif;
+}
+.design-selection li + li {
+	left: -12px;
+}
+.design-selection li + li + li {
+	left: -10px;
+}
+.design-selection li + li + li + li {
+	left: -8px;
+}
+.design-selection li + li + li + li + li {
+	left: 98px;
+	top: -11em;
+}
+.design-selection li + li + li + li + li + li {
+	left: 100px;
+	top: -11em;
+}
+.design-selection li + li + li + li + li + li + li {
+	left: 102px;
+	top: -11em;
+}
+.design-selection li + li + li + li + li + li + li + li {
+	left: 104px;
+	top: -11em;
+}
+.design-selection a {
+	text-decoration: none;
+	letter-spacing: normal;
+	color: #fff;
+	text-transform: uppercase;
+	display: block;
+}
+a.designer-name {
+	color: #6d6100;
+	letter-spacing: -1px;
+	text-transform: lowercase;
+	display: inline;
+}
+.design-selection a:hover {
+	text-decoration: underline;
+}
+.design-archives {
+	position: absolute;
+	line-height: 80%;
+	text-align: center;
+	top: 451px;
+	right: 0;
+	width: 310px;
+	height: 29px;
+	padding: 15px 65px 6px 45px;
+	width: 200px;
+	background: url(./cr-r3a.png) top right no-repeat;
+}
+.design-archives h3 {
+	display: none;
+}
+.design-archives li {
+	padding-right: 6px;
+	display: inline;
+}
+.design-archives a {
+	color: #443901;
+	font: normal 10px 黑体;
+	display: block;
+	width: 35px;
+	height: 18px;
+	text-indent: 100%;
+	overflow: hidden;
+	white-space: nowrap;
+	top: 16px;
+	position: absolute;
+}
+.design-archives ul > li.next a {
+	background: url(./archive-b3a.gif) no-repeat;
+	left: 108px;
+}
+.design-archives ul > li.next a:hover {
+	background: url(./archive-b3b.gif) no-repeat;
+}
+.design-archives ul > li.viewall a {
+	background: url(./archive-b2a.gif) no-repeat;
+	left: 170px;
+}
+.design-archives ul > li.viewall a:hover {
+	background: url(./archive-b2b.gif) no-repeat;
+}
+.zen-resources {
+	height: 74px;
+	background: url(./bg-7.png) top right repeat-x;
+}
+.zen-resources h3 {
+	width: 310px;
+	height: 74px;
+	float: right;
+	background: url(./cr-br.png) top right no-repeat;
+	margin: 0;
+	text-indent: 100%;
+	overflow: hidden;
+	white-space: nowrap;
+}
+.zen-resources ul {
+	padding: 37px 0 0 25px;
+}
+.zen-resources li {
+	display: inline;
+}
+.zen-resources li a {
+	color: #fff;
+	font-size: 9px;
+	font-weight: bold;
+	text-transform: lowercase;
+	text-decoration: none;
+	padding-right: 5px;
+}
+.zen-resources li a:hover {
+	text-decoration: underline;
+}
+.extra1 {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 750px;
+	height: 118px;
+	background: url(./mnemonic.gif) top left no-repeat;
+}
+.extra2 {
+	width: 90px;
+	height: 18px;
+	position: absolute;
+	top: 112px;
+	left: 156px;
+	background: url(./ani1.gif) top left no-repeat;
+}
+.extra3::after {
+	content: '';
+	display: block;
+	width: 61px;
+	height: 51px;
+	position: absolute;
+	top: 13px;
+	left: 315px;
+	background: url(./ani2.gif) top left no-repeat;
+}
+.extra4 {
+	width: 256px;
+	height: 6px;
+	position: absolute;
+	top: 45px;
+	left: 98px;
+	background: url(./ani3.gif) top left no-repeat;
+}
+.extra5 {
+	width: 100%;
+	position: relative;
+	top: -21px;
+}
+.extra5::after {
+	content: '';
+	display: block;
+	float: right;
+	width: 209px;
+	height: 2px;
+	background: url(./ani4.gif) top left no-repeat;
+	margin-right: 40px;
+}
