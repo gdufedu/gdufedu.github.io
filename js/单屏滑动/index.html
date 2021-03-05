@@ -1,0 +1,1553 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+            overflow: hidden;
+        }
+        #wrap {
+            height: 100%;
+        }
+        html,
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p,
+        ul,
+        li {
+            margin: 0;
+            padding: 0;
+            font: 14px '微软雅黑';
+        }
+
+        a {
+            text-decoration: none;
+            display: block;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        img {
+            display: block;
+        }
+
+        .clearfix {
+            *zoom: 1;
+        }
+
+        .clearfix::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        .commonTitle {
+            color: #009ee0;
+            font-size: 80px;
+            line-height: 0.8;
+            font-weight: bold;
+            letter-spacing: -5px;
+        }
+
+        .commonText {
+            color: white;
+            line-height: 1.5;
+            font-size: 15px;
+        }
+
+        #head {
+            background: white;
+        }
+
+        #head .headMain {
+            position: relative;
+            width: 1100px;
+            height: 80px;
+            margin: 0 auto;
+        }
+
+        #head .headMain>.logo {
+            float: left;
+            margin-top: 30px;
+        }
+
+        #head .headMain>.nav {
+            margin-top: 50px;
+            float: right;
+        }
+
+        #head .headMain>.nav>.list>li {
+            float: left;
+            margin-left: 40px;
+            position: relative;
+        }
+
+        #head .headMain>.nav>.list>li .up {
+            color: #000;
+            position: absolute;
+            width: 0;
+            overflow: hidden;
+            transition: 1s width;
+        }
+
+        #head .headMain>.nav>.list>li:hover .up {
+            width: 100%;
+        }
+
+        #head .headMain>.arrow {
+            position: absolute;
+            left: 50%;
+            bottom: -11px;
+            width: 21px;
+            height: 11px;
+            background: url('img/menuIndicator.png');
+            transition: 1s left;
+            z-index: 2;
+        }
+
+        #content {
+            position: relative;
+            background: gray;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        #content>.list {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            transition: 1s top;
+        }
+
+        #content>.list>li {
+            position: relative;
+            background-position: 50% 50% !important;
+            overflow: hidden;
+        }
+
+        #content>.list>li>section {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            width: 1100px;
+            height: 520px;
+        }
+
+
+        #content>.list>.works {
+            background: url('img/bg4.jpg') no-repeat;
+        }
+
+        #content>.list>.works .works1 {
+            position: relative;
+            z-index: 2;
+            margin: 50px 0 100px 50px;
+        }
+
+        #content>.list>.works .works2 {
+            margin-left: 50px;
+            position: relative;
+            z-index: 2;
+        }
+
+        #content>.list>.works .works2>.item {
+            float: left;
+            width: 220px;
+            height: 133px;
+            margin: 0 1px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #content>.list>.works .works2>.item:last-of-type {
+            width: 332px;
+        }
+
+        #content>.list>.works .works2>.item .mask {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            box-sizing: border-box;
+            padding: 10px;
+            background: #000;
+            opacity: 0;
+            color: white;
+            transition: 1s opacity;
+        }
+
+        #content>.list>.works .works2>.item .mask .icon {
+            width: 32px;
+            height: 34px;
+            margin: 10px auto 0;
+            background: url('img/zoomico.png') no-repeat;
+        }
+
+        #content>.list>.works .works2>.item img {
+            transition: 1s transform;
+        }
+
+        #content>.list>.works .works2>.item .mask .icon:hover {
+            background-position: 0 -35px;
+            transition: 1s background-position;
+        }
+
+        #content>.list>.works .works2>.item:hover .mask {
+            opacity: 0.8;
+        }
+
+        #content>.list>.works .works2>.item:hover img {
+            transform: rotate(30deg) scale(1.5);
+        }
+
+        #content>.list>.works .works3 {
+            position: absolute;
+            left: 900px;
+            top: 170px;
+            z-index: 2;
+            width: 167px;
+            height: 191px;
+            background: url('img/robot.png') no-repeat;
+            animation: works3Move 4s linear infinite;
+        }
+
+        @keyframes works3Move {
+            0% {
+                transform: translateX(0) rotateY(0);
+            }
+
+            49% {
+                transform: translateX(-490px) rotateY(0);
+            }
+
+            50% {
+                transform: translateX(-500px) rotateY(180deg);
+            }
+
+            100% {
+                transform: translateX(0) rotateY(180deg);
+            }
+        }
+
+        #content>.list>.course {
+            background: url('img/bg2.jpg') no-repeat;
+        }
+
+        #content>.list>.course .course1 {
+            margin: 50px;
+            position: relative;
+            z-index: 2;
+        }
+
+        #content>.list>.course .course2 {
+            margin-left: 50px;
+            width: 400px;
+            position: relative;
+            z-index: 2;
+        }
+
+        #content>.list>.course .course3 {
+            position: absolute;
+            right: 50px;
+            top: 70px;
+            width: 480px;
+            z-index: 2;
+        }
+
+        #content>.list>.course .course3 .item {
+            position: relative;
+            float: left;
+            width: 120px;
+            height: 132px;
+            perspective: 500px;
+            transform-style: preserve-3d;
+        }
+
+        #content>.list>.course .course3 .item .face,
+        #content>.list>.course .course3 .item .backFace {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+            padding: 15px;
+            transition: 1s transform;
+        }
+
+        #content>.list>.course .course3 .item .backFace {
+            background-position: 50% 50% !important;
+        }
+
+        #content>.list>.course .course3 .item:nth-of-type(1) .backFace {
+            background: url('img/apcoa.png') no-repeat;
+        }
+
+        #content>.list>.course .course3 .item:nth-of-type(2) .backFace {
+            background: url('img/binoli.png') no-repeat;
+        }
+
+        #content>.list>.course .course3 .item:nth-of-type(3) .backFace {
+            background: url('img/bks.png') no-repeat;
+        }
+
+        #content>.list>.course .course3 .item:nth-of-type(4) .backFace {
+            background: url('img/gu.png') no-repeat;
+        }
+
+        #content>.list>.course .course3 .item:nth-of-type(5) .backFace {
+            background: url('img/hlx.png') no-repeat;
+        }
+
+        #content>.list>.course .course3 .item:nth-of-type(6) .backFace {
+            background: url('img/lbs.png') no-repeat;
+        }
+
+        #content>.list>.course .course3 .item:nth-of-type(7) .backFace {
+            background: url('img/leonberg.png') no-repeat;
+        }
+
+        #content>.list>.course .course3 .item:nth-of-type(8) .backFace {
+            background: url('img/pcwelt.png') no-repeat;
+        }
+
+        #content>.list>.course .course3 .item:nth-of-type(9) .backFace {
+            background: url('img/tata.png') no-repeat;
+        }
+
+        #content>.list>.course .course3 .item:nth-of-type(10) .backFace {
+            background: url('img/bks.png') no-repeat;
+        }
+
+        #content>.list>.course .course3 .item:nth-of-type(11) .backFace {
+            background: url('img/bks.png') no-repeat;
+        }
+
+        #content>.list>.course .course3 .item:nth-of-type(12) .backFace {
+            background: url('img/bks.png') no-repeat;
+        }
+
+        #content>.list>.course .course3 .item .face {
+            transform: rotateY(180deg);
+            backface-visibility: hidden;
+            background: #009ee0;
+            color: white;
+        }
+
+        #content>.list>.course .course3 .item:hover .face {
+            transform: rotateY(360deg);
+        }
+
+        #content>.list>.course .course3 .item:hover .backFace {
+            transform: rotateY(180deg);
+        }
+
+        #content>.list>.course .course3 .line {
+            position: absolute;
+            top: -7px;
+            width: 9px;
+            height: 410px;
+            background: url('img/plus_row.png') no-repeat;
+        }
+
+        #content>.list>.course .course3 .line:nth-of-type(1) {
+            left: -5px;
+        }
+
+        #content>.list>.course .course3 .line:nth-of-type(2) {
+            left: 115px;
+        }
+
+        #content>.list>.course .course3 .line:nth-of-type(3) {
+            left: 235px;
+        }
+
+        #content>.list>.course .course3 .line:nth-of-type(4) {
+            left: 355px;
+        }
+
+        #content>.list>.course .course3 .line:nth-of-type(5) {
+            left: 475px;
+        }
+
+        #content>.list>.home {
+            background: url('img/bg1.jpg') no-repeat;
+        }
+
+        #content>.list>.home .home1,
+        #content>.list>.home .home2 {
+            transition: 1s transform, 1s opacity;
+        }
+
+        #content>.list>.home .home1 {
+            width: 100%;
+            height: 100%;
+            perspective: 1000px;
+            transform-style: preserve-3d;
+        }
+
+        #content>.list>.home .home1>li {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            visibility: hidden;
+        }
+
+        #content>.list>.home .home1>li:nth-child(1) {
+            background: #dc6c5f;
+        }
+
+        #content>.list>.home .home1>li:nth-child(2) {
+            background: #95dc84;
+        }
+
+        #content>.list>.home .home1>li:nth-child(3) {
+            background: #64b9d2;
+        }
+
+        #content>.list>.home .home1>li:nth-child(4) {
+            background: #000000;
+        }
+
+        #content>.list>.home .home1>li>div {
+            margin-top: 200px;
+            color: white;
+            text-align: center;
+        }
+
+        #content>.list>.home .home1>li.active {
+            visibility: visible;
+        }
+
+        #content>.list>.home .home2 {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            text-align: center;
+        }
+
+        #content>.list>.home .home2 li {
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            background: rgba(255, 255, 255, .5);
+            display: inline-block;
+            box-shadow: 0 0 4px rgba(25, 25, 25, .8);
+            cursor: pointer;
+        }
+
+        #content>.list>.home .home2>li.active {
+            background: white;
+            cursor: default;
+        }
+
+        #content>.list>.home .home1>li.leftHide {
+            visibility: hidden;
+            animation: 1s leftHide 1 linear;
+        }
+
+        #content>.list>.home .home1>li.rightShow {
+            visibility: visible;
+            animation: 1s rightShow 1 linear;
+        }
+
+        @keyframes leftHide {
+            0% {
+                visibility: visible;
+            }
+
+            50% {
+                transform: translateX(-40%) rotateY(30deg) scale(.8);
+            }
+
+            100% {
+                transform: translateZ(-200px);
+            }
+        }
+
+        @keyframes rightShow {
+            0% {
+                visibility: hidden;
+                transform: translateZ(-200px);
+            }
+
+            50% {
+                transform: translateX(40%) rotateY(-30deg) scale(.8);
+            }
+
+            100% {}
+        }
+
+        #content>.list>.home .home1>li.leftShow {
+            visibility: visible;
+            animation: 1s leftShow 1 linear;
+        }
+
+        #content>.list>.home .home1>li.rightHide {
+            visibility: hidden;
+            animation: 1s rightHide 1 linear;
+        }
+
+        @keyframes leftShow {
+            0% {
+                visibility: hidden;
+                transform: translateZ(-200px);
+            }
+
+            50% {
+                transform: translateX(-40%) rotateY(30deg) scale(.8);
+            }
+
+            100% {}
+        }
+
+        @keyframes rightHide {
+            0% {
+                visibility: visible;
+            }
+
+            50% {
+                transform: translateX(40%) rotateY(-30deg) scale(.8);
+            }
+
+            100% {
+                transform: translateZ(-200px);
+            }
+        }
+
+        #content>.list>.about {
+            background: url('img/bg3.jpg') no-repeat;
+        }
+
+        #content>.list>.about .about1 {
+            margin: 50px 0 100px 50px;
+        }
+
+        #content>.list>.about .about2 {
+            margin-left: 50px;
+            width: 400px;
+        }
+
+        #content>.list>.about .about4 {
+            width: 357px;
+            height: 998px;
+            position: absolute;
+            left: 50%;
+            top: -100px;
+            background: url('img/greenLine.png') no-repeat;
+        }
+
+        #content>.list>.about .about3>.item {
+            width: 260px;
+            height: 200px;
+            border: 5px solid rgba(255, 255, 255, .5);
+            border-radius: 8px;
+            position: absolute;
+            z-index: 2;
+            overflow: hidden;
+            transition: 1s transform;
+        }
+
+        #content>.list>.about .about3>.item:nth-child(1) {
+            left: 750px;
+            top: 50px;
+        }
+
+        #content>.list>.about .about3>.item:nth-child(2) {
+            left: 600px;
+            top: 290px;
+        }
+
+        #content>.list>.about .about3>.item>span,
+        #content>.list>.about .about3>.item>ul {
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            right: 0;
+        }
+
+        #content>.list>.about .about3>.item:nth-child(1)>span {
+            background: url(img/about2.jpg) no-repeat;
+            transform: scale(1.5);
+            transition: 1s transform;
+        }
+
+        #content>.list>.about .about3>.item:nth-child(2)>span {
+            background: url(img/about4.jpg) no-repeat;
+            transform: scale(1.5);
+            transition: 1s transform;
+        }
+
+        #content>.list>.about .about3>.item:hover span {
+            transform: scale(1);
+        }
+
+        #content>.list>.about .about3>.item>ul>li {
+            float: left;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #content>.list>.about .about3>.item>ul>li>img {
+            position: absolute;
+            transition: 1s top, 1s left;
+        }
+
+        #content>.list>.team {
+            background: url('img/bg5.jpg') no-repeat;
+        }
+
+        #content>.list>.team .team1,
+        #content>.list>.team .team2 {
+            width: 400px;
+            margin: 50px;
+            transition: 1s transform;
+        }
+
+        #content>.list>.team .team1 {
+            float: left;
+        }
+
+        #content>.list>.team .team2 {
+            float: right;
+        }
+
+        #content>.list>.team .team3 {
+            width: 944px;
+            height: 448px;
+            position: absolute;
+            left: 50%;
+            margin-left: -472px;
+            top: 250px;
+        }
+
+        #content>.list>.team .team3 ul {
+            position: relative;
+            height: 100%;
+        }
+
+        #content>.list>.team .team3 ul>li {
+            width: 118px;
+            height: 100%;
+            background: url(img/team.png) no-repeat;
+            float: left;
+            transition: 1s opacity;
+        }
+
+        #content>.list>.team .team3 ul>li:nth-child(1) {
+            background-position: 0, 0;
+        }
+
+        #content>.list>.team .team3 ul>li:nth-child(2) {
+            background-position: -118px, 0;
+        }
+
+        #content>.list>.team .team3 ul>li:nth-child(3) {
+            background-position: -236px, 0;
+        }
+
+        #content>.list>.team .team3 ul>li:nth-child(4) {
+            background-position: -354px, 0;
+        }
+
+        #content>.list>.team .team3 ul>li:nth-child(5) {
+            background-position: -472px, 0;
+        }
+
+        #content>.list>.team .team3 ul>li:nth-child(6) {
+            background-position: -590px, 0;
+        }
+
+        #content>.list>.team .team3 ul>li:nth-child(7) {
+            background-position: -708px, 0;
+        }
+
+        #content>.list>.team .team3 ul>li:nth-child(8) {
+            background-position: -826px, 0;
+        }
+
+        #content>.list>.team canvas {
+            position: absolute;
+            top: 0;
+        }
+
+        #content>.dot {
+            position: fixed;
+            right: 10px;
+            top: 50%;
+
+        }
+
+        #content>.dot>li {
+            width: 10px;
+            height: 10px;
+            border: 5px solid pink;
+            margin-top: 10px;
+            border-radius: 50%;
+        }
+
+        #content>.dot>li.active {
+            background: white;
+        }
+
+        #content .course .plane1 {
+            width: 359px;
+            height: 283px;
+            background: url(img/plane1.png) no-repeat;
+            position: absolute;
+            left: 300px;
+            top: -100px;
+            transition: 1s;
+        }
+
+        #content .course .plane2 {
+            width: 309px;
+            height: 249px;
+            background: url(img/plane2.png) no-repeat;
+            position: absolute;
+            left: -100px;
+            top: 200px;
+            transition: 1s;
+        }
+
+        #content .course .plane3 {
+            width: 230px;
+            height: 182px;
+            background: url(img/plane3.png) no-repeat;
+            position: absolute;
+            left: 300px;
+            top: 400px;
+            transition: 1s;
+        }
+
+        #content .works .pencel1 {
+            width: 180px;
+            height: 97px;
+            background: url(img/pencel1.png) no-repeat;
+            position: absolute;
+            transition: 1s;
+            left: 500px;
+            top: 0;
+        }
+
+        #content .works .pencel2 {
+            width: 268px;
+            height: 38px;
+            background: url(img/pencel2.png) no-repeat;
+            position: absolute;
+            transition: 1s;
+            left: 300px;
+            top: 250px;
+        }
+
+        #content .works .pencel3 {
+            width: 441px;
+            height: 231px;
+            background: url(img/pencel3.png) no-repeat;
+            position: absolute;
+            transition: 1s;
+            left: 650px;
+            top: 300px;
+        }
+        #head > .headMain .music {
+            width: 14px;
+            height: 14px;
+            background: url('img/musicoff.gif');
+            float: left;
+            margin: 50px 0 0 5px;
+        }
+        #mask {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            z-index: 100;
+        }
+        #mask .down, #mask .up {
+            width: 100%;
+            height: 50%;
+            background: deepskyblue;
+            transition: 1s height;
+        }
+        #mask .down {
+            position: absolute;
+            bottom: 0;
+        }
+        #mask .line {
+            height: 4px;
+            width: 0;
+            background: white;
+            position: absolute;
+            z-index: 101;
+            left: 0;
+            top: 50%;
+            margin-top: -2px;
+            transition: 1s width;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="wrap">
+        <div id="mask">
+            <div class="up">
+            </div>
+            <div class="down"></div>
+            <span class="line"></span>
+        </div>
+        <header id="head">
+            <div class="headMain">
+                <h1 class="logo">
+                    <a href="javascript:;">
+                        <img src="img/logo.png" alt="">
+                    </a>
+                </h1>
+                <div class="music">
+                    <audio src="img/audio.mp3" loop></audio>
+                </div>
+                <nav class="nav">
+                    <ul class="list clearfix">
+                        <li>
+                            <a href="javascript:;">
+                                <div class="up">
+                                    <img src="img/home_gruen.png" alt="">
+                                </div>
+                                <div class="down">
+                                    <img src="img/home.png" alt="">
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <div class="up">
+                                    Course
+                                </div>
+                                <div class="down">
+                                    Course
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <div class="up">
+                                    Works
+                                </div>
+                                <div class="down">
+                                    Works
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <div class="up">
+                                    About
+                                </div>
+                                <div class="down">
+                                    About
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <div class="up">
+                                    Team
+                                </div>
+                                <div class="down">
+                                    Team
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="arrow"></div>
+            </div>
+        </header>
+        <section id="content">
+            <ul class="list">
+                <li class="home">
+                    <section>
+                        <ul class="home1">
+                            <li class="commonTitle active">
+                                <div class="item">
+                                    one layer
+                                </div>
+                            </li>
+                            <li class="commonTitle">
+                                <div class="item">
+                                    two layer
+                                </div>
+                            </li>
+                            <li class="commonTitle">
+                                <div class="item">
+                                    three layer
+                                </div>
+                            </li>
+                            <li class="commonTitle">
+                                <div class="item">
+                                    four layer
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="home2">
+                            <li class="active"></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </section>
+                </li>
+                <li class="course">
+                    <section>
+                        <header class="course1 commonTitle">
+                            <span>EINIGE</span><br>
+                            <span>UNSERER</span><br>
+                            <span>KUNDEN</span><br>
+                        </header>
+                        <div class="course2 commonText">
+                            <p>Das Kundenvertrauen in unsere Kompetenz ist die notwendige Basis einer erfolgreichen
+                                Zusammenarbeit, gleichzeitig aber auch das größte Lob, das man uns entgegenbringen kann
+                                <br> Diese und viele weitere große und kleine Kunden vertrauen uns seit Jahren, was uns
+                                stolz macht, und dafür sagen wir an dieser Stelle einfach mal.</p>
+                        </div>
+                        <div class="course3">
+                            <span class="line"></span>
+                            <span class="line"></span>
+                            <span class="line"></span>
+                            <span class="line"></span>
+                            <span class="line"></span>
+                            <div class="item">
+                                <div class="backFace"></div>
+                                <div class="face">我有一头邱海峰</div>
+                            </div>
+                            <div class="item">
+                                <div class="backFace"></div>
+                                <div class="face">我有一头邱海峰</div>
+                            </div>
+                            <div class="item">
+                                <div class="backFace"></div>
+                                <div class="face">我有一头邱海峰</div>
+                            </div>
+                            <div class="item">
+                                <div class="backFace"></div>
+                                <div class="face">我有一头邱海峰</div>
+                            </div>
+                            <div class="item">
+                                <div class="backFace"></div>
+                                <div class="face">我有一头邱海峰</div>
+                            </div>
+                            <div class="item">
+                                <div class="backFace"></div>
+                                <div class="face">我有一头邱海峰</div>
+                            </div>
+                            <div class="item">
+                                <div class="backFace"></div>
+                                <div class="face">我有一头邱海峰</div>
+                            </div>
+                            <div class="item">
+                                <div class="backFace"></div>
+                                <div class="face">我有一头邱海峰</div>
+                            </div>
+                            <div class="item">
+                                <div class="backFace"></div>
+                                <div class="face">我有一头邱海峰</div>
+                            </div>
+                            <div class="item">
+                                <div class="backFace"></div>
+                                <div class="face">我有一头邱海峰</div>
+                            </div>
+                            <div class="item">
+                                <div class="backFace"></div>
+                                <div class="face">我有一头邱海峰</div>
+                            </div>
+                            <div class="item">
+                                <div class="backFace"></div>
+                                <div class="face">我有一头邱海峰</div>
+                            </div>
+                        </div>
+                        <div class="plane1"></div>
+                        <div class="plane2"></div>
+                        <div class="plane3"></div>
+                    </section>
+                </li>
+                <li class="works">
+                    <section>
+                        <header class="works1 commonTitle">
+                            <span>EINBLICK</span><br>
+                            <span>ERKENNTNIS</span><br>
+                            <span>ERGEBNIS</span><br>
+                        </header>
+                        <div class="works2">
+                            <div class="item">
+                                <img src="img/worksimg1.jpg" alt="">
+                                <div class="mask">
+                                    <span>我有一头张晓飞</span>
+                                    <div class="icon"></div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <img src="img/worksimg2.jpg" alt="">
+                                <div class="mask">
+                                    <span>我从来都不骑</span>
+                                    <div class="icon"></div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <img src="img/worksimg3.jpg" alt="">
+                                <div class="mask">
+                                    <span>我有一头张晓飞</span>
+                                    <div class="icon"></div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <img src="img/worksimg4.jpg" alt="">
+                                <div class="mask">
+                                    <span>我有一头张晓飞</span>
+                                    <div class="icon"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="works3"></div>
+                        <div class="pencel1"></div>
+                        <div class="pencel2"></div>
+                        <div class="pencel3"></div>
+                    </section>
+                </li>
+                <li class="about">
+                    <section>
+                        <header class="about1 commonTitle">
+                            <span>DIE</span><br>
+                            <span>SPEZIELLE</span><br>
+                            <span>VIELFALT</span><br>
+                        </header>
+                        <div class="about2">
+                            <p class="commonText">Der bunte Medienmix ist die Faszination die uns antreibt und das, was
+                                man an uns schätzt. Von A bis Z und von vorne bis hinten nehmen wir Ihr Projekt unter
+                                unsere Fittiche und lassen es zu etwas Großartigem heranwachsen.</p>
+                        </div>
+                        <div class="about3">
+                            <div class="item">
+                                <span></span>
+                                <ul data-src="img/about1.jpg">
+
+                                </ul>
+                            </div>
+                            <div class="item">
+                                <span></span>
+                                <ul data-src="img/about3.jpg">
+
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="about4">
+
+                        </div>
+                    </section>
+                </li>
+                <li class="team">
+                    <section>
+                        <header class="team1 commonTitle">
+                            <span>WIR SIND</span><br>
+                            <span>VOXELAIR</span><br>
+                        </header>
+                        <div class="team2">
+                            <p class="commonText">Wir sind seit 2002 eine Full-Service-Werbeagentur mit Stammsitz in
+                                Heimsheim, zwischen Stuttgart und Karlsruhe.</p>
+                            <p class="commonText">Über 60 Jahre Erfahrung vereinen das gesamte VoxelAir-Team. Dabei hat
+                                jedes Voxel neben professionellem Allroundwissen auch sein ganz spezielles Gebiet, um
+                                selbst die individuellsten Kundenwünsche schnell und kompetent umzusetzen.</p>
+                        </div>
+                        <div class="team3">
+                            <ul>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </div>
+                    </section>
+                </li>
+            </ul>
+            <ul class="dot">
+                <li class="active"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </section>
+    </section>
+</body>
+<script>
+    window.onload = function () {
+        var arrowEl = document.querySelector('#head .headMain > .arrow');
+        var liNodes = document.querySelectorAll('#head .headMain > .nav > .list > li');
+        var upNodes = document.querySelectorAll('#head .headMain > .nav > .list > li .up');
+        var firstLiNode = liNodes[0];
+        var firstUpNode = firstLiNode.querySelector('.up');
+        var head = document.querySelector('#head');
+        var content = document.querySelector('#content');
+        var cLiNodes = document.querySelectorAll('#content .list > li');
+        var cList = document.querySelector('#content .list');
+        var home2LiNodes = document.querySelectorAll('#content > .list>.home .home2 >li');
+        var home1LiNodes = document.querySelectorAll('#content > .list>.home .home1 >li');
+        var home1 = document.querySelector('#content > .list>.home .home1');
+        var aboutUls = document.querySelectorAll('#content>.list>.about .about3 > .item > ul');
+        var dotLis = document.querySelectorAll('#content > .dot > li');
+        var team3 = document.querySelector('#content>.list>.team  .team3');
+        var team3Ul = document.querySelector('#content>.list>.team .team3 ul');
+        var team3Lis = document.querySelectorAll('#content>.list>.team .team3 ul > li');
+        var music = document.querySelector('#head > .headMain .music');
+        var audio = document.querySelector('#head > .headMain .music audio');
+        var mask = document.querySelector('#mask');
+        var line = document.querySelector('#mask .line');
+        var mians = document.querySelectorAll('#mask div');
+        var now = 0;
+        var timer = 0;
+        var preIndex = 0;
+        loadingAn();
+        function loadingAn() {
+            var arr = ['bg1.jpg','bg2.jpg','bg3.jpg','bg4.jpg','bg5.jpg','about1.jpg','about2.jpg','about3.jpg','about4.jpg','worksimg1.jpg','worksimg2.jpg','worksimg3.jpg','worksimg4.jpg','team.png','greenLine.png'];
+            var flag = 0;
+            for (var i = 0; i < arr.length; i++) {
+                var img = new Image();
+                img.src = 'img/' + arr[i];
+                img.onload = function () {
+                    flag++;
+                    line.style.width = flag/arr.length* 100 + '%';
+                }
+            }
+            line.addEventListener('transitionend', function () {
+                if (flag === arr.length) {
+                    for (let i = 0; i < mians.length; i++) {
+                        mians[i].style.height = 0;                        
+                    }
+                    this.style.display = 'none';
+                }
+            });
+            mians[0].addEventListener('transitionend', function () {
+                mask.remove();
+                audio.play();
+                home3D();
+            });
+        }
+        music.onclick = function () {
+            if (audio.paused) {
+                audio.play();
+                music.style.background = 'url(img/musicon.gif)';
+            } else {
+                audio.pause();
+                music.style.background = 'url(img/musicoff.gif)';
+            }
+        };
+        var anArr = [
+            {
+                inAn: function () {
+                    var home1 = document.querySelector('#content > .list>.home .home1');
+                    var home2 = document.querySelector('#content > .list>.home .home2');
+                    home2.style.transform = home1.style.transform = 'translateY(0)';
+                    home2.style.opacity = home1.style.opacity = 1;
+                },
+                outAn: function () {
+                    var home1 = document.querySelector('#content > .list>.home .home1');
+                    var home2 = document.querySelector('#content > .list>.home .home2');
+                    home1.style.transform = 'translateY(-400px)';
+                    home2.style.transform = 'translateY(100px)';
+                    home2.style.opacity = home1.style.opacity = 0;
+                }
+            },
+            {
+                inAn: function () {
+                    var plane1 = document.querySelector('#content .course .plane1');
+                    var plane2 = document.querySelector('#content .course .plane2');
+                    var plane3 = document.querySelector('#content .course .plane3');
+                    plane3.style.transform = plane2.style.transform = plane1.style.transform = 'translate(0, 0)';
+                },
+                outAn: function () {
+                    var plane1 = document.querySelector('#content .course .plane1');
+                    var plane2 = document.querySelector('#content .course .plane2');
+                    var plane3 = document.querySelector('#content .course .plane3');
+                    plane1.style.transform = 'translate(-200px, -200px)';
+                    plane2.style.transform = 'translate(-200px, 200px)';
+                    plane3.style.transform = 'translate(200px, -200px)';
+                }
+            },
+            {
+                inAn: function () {                    
+                    var pencel1 = document.querySelector('#content .works .pencel1');
+                    var pencel2 = document.querySelector('#content .works .pencel2');
+                    var pencel3 = document.querySelector('#content .works .pencel3');
+                    pencel3.style.transform = pencel2.style.transform = pencel1.style.transform = 'translateY(0)';
+                },
+                outAn: function () {                
+                    var pencel1 = document.querySelector('#content .works .pencel1');
+                    var pencel2 = document.querySelector('#content .works .pencel2');
+                    var pencel3 = document.querySelector('#content .works .pencel3');
+                    pencel1.style.transform = 'translateY(-100px)';
+                    pencel3.style.transform = pencel2.style.transform = 'translateY(100px)';
+                }
+            },
+            {
+                inAn: function () {       
+                    var Rect1 = document.querySelector('#content>.list>.about .about3>.item:nth-child(1)');
+                    var Rect2 = document.querySelector('#content>.list>.about .about3>.item:nth-child(2)');
+                    Rect2.style.transform = Rect1.style.transform = 'rotate(0)';
+                },
+                outAn: function () {             
+                    var Rect1 = document.querySelector('#content>.list>.about .about3>.item:nth-child(1)');
+                    var Rect2 = document.querySelector('#content>.list>.about .about3>.item:nth-child(2)');
+                    Rect1.style.transform = 'rotate(45deg)';
+                    Rect2.style.transform = 'rotate(-45deg)';
+                }
+            },
+            {
+                inAn: function () {
+                    var Rect1 = document.querySelector('#content>.list>.team .team1');
+                    var Rect2 = document.querySelector('#content>.list>.team .team2');
+                    Rect2.style.transform = Rect1.style.transform = 'translateX(0)';
+                },
+                outAn: function () {       
+                    var Rect1 = document.querySelector('#content>.list>.team .team1');
+                    var Rect2 = document.querySelector('#content>.list>.team .team2');
+                    Rect1.style.transform = 'translateX(-200px)';
+                    Rect2.style.transform = 'translateX(200px)';
+                }
+            }
+        ];
+        for (let i = 0; i < anArr.length; i++) {
+            anArr[i]['outAn']();
+        }
+        setTimeout(() => {
+            anArr[0].inAn();
+        }, 2000);
+        biubiu();
+        function biubiu() {
+            var oc = null;
+            var time1 = 0;
+            var time2 = 0;
+            for (var i = 0; i < team3Lis.length; i++) {
+                team3Lis[i].onmouseenter = function () {
+                    for (var i = 0; i < team3Lis.length; i++) {
+                        team3Lis[i].style.opacity = .2;
+                    }
+                    this.style.opacity = 1;
+                    addCanvas();
+                    oc.style.left = this.offsetLeft + 'px';
+                };
+            }
+            function addCanvas() {
+                if (!oc) {
+                    oc = document.createElement('canvas');
+                    oc.width = team3Lis[0].offsetWidth;
+                    oc.height = team3Lis[0].offsetHeight * 2 / 3;
+                    oc.onmouseleave = function () {
+                        for (var i = 0; i < team3Lis.length; i++) {
+                            team3Lis[i].style.opacity = 1;
+                        }
+                        removeCanvas();
+                    };
+                    team3.appendChild(oc);
+                    QiPao();
+                }
+            }
+            function removeCanvas() {
+                oc.remove();
+                oc = null;
+                clearInterval(time1);
+                clearInterval(time2);
+            }
+            function QiPao() {
+
+                if (oc.getContext) {
+                    var ctx = oc.getContext("2d");
+
+
+                    var arr = [];
+
+                    //将数组中的圆绘制到画布上
+                    time1 = setInterval(function () {
+                        ctx.clearRect(0, 0, oc.width, oc.height);
+                        //动画
+                        for (var i = 0; i < arr.length; i++) {
+                            arr[i].deg += 5;
+                            arr[i].x = arr[i].startX + Math.sin(arr[i].deg * Math.PI / 180) * arr[i].step * 2;
+                            arr[i].y = arr[i].startY - (arr[i].deg * Math.PI / 180) * arr[i].step;
+
+                            if (arr[i].y <= 50) {
+                                arr.splice(i, 1)
+                            }
+                        }
+
+
+                        //绘制
+                        for (var i = 0; i < arr.length; i++) {
+                            ctx.save();
+                            ctx.fillStyle = "rgba(" + arr[i].red + "," + arr[i].green + "," + arr[i].blue + "," + arr[i].alp + ")";
+                            ctx.beginPath();
+                            ctx.arc(arr[i].x, arr[i].y, arr[i].r, 0, 2 * Math.PI);
+                            ctx.fill();
+                            ctx.restore();
+                        }
+                    }, 1000 / 60)
+
+
+
+
+
+                    //往arr中注入随机圆的信息
+                    time2 = setInterval(function () {
+                        var r = Math.random() * 6 + 2;
+                        var x = Math.random() * oc.width;
+                        var y = oc.height - r;
+                        var red = Math.round(Math.random() * 255);
+                        var green = Math.round(Math.random() * 255);
+                        var blue = Math.round(Math.random() * 255);
+                        var alp = 1;
+
+
+                        var deg = 0;
+                        var startX = x;
+                        var startY = y;
+                        //曲线的运动形式
+                        var step = Math.random() * 20 + 10;
+                        arr.push({
+                            x: x,
+                            y: y,
+                            r: r,
+                            red: red,
+                            green: green,
+                            blue: blue,
+                            alp: alp,
+                            deg: deg,
+                            startX: startX,
+                            startY: startY,
+                            step: step
+                        })
+                    }, 50)
+                }
+            }
+        }
+        picBoom();
+        function picBoom() {
+            for (let i = 0; i < aboutUls.length; i++) {
+                change(aboutUls[i]);
+            }
+            function change(UL) {
+                var src = UL.dataset.src;
+                var w = UL.offsetWidth / 2;
+                var h = UL.offsetHeight / 2;
+                for (let i = 0; i < 4; i++) {
+                    var liNode = document.createElement('li');
+                    liNode.style.width = w + 'px';
+                    liNode.style.height = h + 'px';
+                    var imgNode = document.createElement('img');
+                    imgNode.style.left = -(i % 2) * w + 'px';
+                    imgNode.style.top = -Math.floor(i / 2) * h + 'px';
+                    imgNode.src = src;
+                    liNode.appendChild(imgNode);
+                    UL.appendChild(liNode);
+                }
+                UL.onmouseenter = function () {
+                    var imgNodes = this.querySelectorAll('li > img');
+                    imgNodes[0].style.top = h + 'px';
+                    imgNodes[1].style.left = -2 * w + 'px';
+                    imgNodes[2].style.left = w + 'px';
+                    imgNodes[3].style.top = -2 * h + 'px';
+                };
+                UL.onmouseleave = function () {
+                    var imgNodes = this.querySelectorAll('li > img');
+                    imgNodes[0].style.top = 0 + 'px';
+                    imgNodes[1].style.left = -w + 'px';
+                    imgNodes[2].style.left = 0 + 'px';
+                    imgNodes[3].style.top = -h + 'px';
+                };
+            }
+        }
+        var oldIndex = 0;
+        var timer3D = 0;
+        var autoIndex = 0;
+        function home3D() {
+            for (var i = 0; i < home2LiNodes.length; i++) {
+                home2LiNodes[i].index = i;
+                home2LiNodes[i].onclick = function () {
+                    clearInterval(timer3D);
+                    for (var i = 0; i < home2LiNodes.length; i++) {
+                        home2LiNodes[i].classList.remove('active');
+                    }
+                    this.classList.add('active');
+                    if (this.index > oldIndex) {
+                        home1LiNodes[this.index].classList.remove('leftShow');
+                        home1LiNodes[this.index].classList.remove('leftHide');
+                        home1LiNodes[this.index].classList.remove('rightHide');
+                        home1LiNodes[this.index].classList.add('rightShow');
+
+                        home1LiNodes[oldIndex].classList.remove('leftShow');
+                        home1LiNodes[oldIndex].classList.remove('rightShow');
+                        home1LiNodes[oldIndex].classList.remove('rightHide');
+                        home1LiNodes[oldIndex].classList.add('leftHide');
+                    }
+                    if (this.index < oldIndex) {
+                        home1LiNodes[this.index].classList.remove('rightShow');
+                        home1LiNodes[this.index].classList.remove('leftHide');
+                        home1LiNodes[this.index].classList.remove('rightHide');
+                        home1LiNodes[this.index].classList.add('leftShow');
+
+                        home1LiNodes[oldIndex].classList.remove('leftShow');
+                        home1LiNodes[oldIndex].classList.remove('rightShow');
+                        home1LiNodes[oldIndex].classList.remove('leftHide');
+                        home1LiNodes[oldIndex].classList.add('rightHide');
+                    }
+                    oldIndex = this.index;
+                    autoIndex = this.index;
+                    move();
+                }
+            }
+            move();
+            function move() {
+                clearInterval(timer3D);
+                timer3D = setInterval(() => {
+                    autoIndex++;
+                    if (autoIndex == home1LiNodes.length) {
+                        autoIndex = 0;
+                    }
+                    for (var i = 0; i < home2LiNodes.length; i++) {
+                        home2LiNodes[i].classList.remove('active');
+                    }
+                    home2LiNodes[autoIndex].classList.add('active');
+                    home1LiNodes[autoIndex].classList.remove('leftShow');
+                    home1LiNodes[autoIndex].classList.remove('leftHide');
+                    home1LiNodes[autoIndex].classList.remove('rightHide');
+                    home1LiNodes[autoIndex].classList.add('rightShow');
+
+                    home1LiNodes[oldIndex].classList.remove('leftShow');
+                    home1LiNodes[oldIndex].classList.remove('rightShow');
+                    home1LiNodes[oldIndex].classList.remove('rightHide');
+                    home1LiNodes[oldIndex].classList.add('leftHide');
+                    oldIndex = autoIndex;
+                }, 2000);
+            }
+            home1.onmouseenter = function () {
+                clearInterval(timer3D);
+            };
+            home1.onmouseleave = function () {
+                move();
+            };
+        }
+        window.onresize = function () {
+            contentBind();
+            cList.style.top = - now * (document.documentElement.clientHeight - head.offsetHeight) + 'px';
+            arrowEl.style.left = liNodes[now].offsetLeft + liNodes[now].offsetWidth / 2 - arrowEl.offsetWidth / 2 + 'px';
+        };
+        if (content.addEventListener) {
+            content.addEventListener('DOMMouseScroll', function (ev) {
+                ev = ev || event;
+                clearTimeout(timer);
+                timer = setTimeout(function () {
+                    fn(ev);
+                }, 200);
+            });
+        }
+        content.onmousewheel = function (ev) {
+            ev = ev || event;
+            clearTimeout(timer);
+            timer = setTimeout(function () {
+                fn(ev);
+            }, 200);
+        };
+        function fn(ev) {
+            ev = ev || event;
+            var dir = '';
+            if (ev.wheelDelta) {
+                dir = ev.wheelDelta > 0 ? 'up' : 'down';
+            } else if (ev.detail) {
+                dir = ev.detail < 0 ? 'up' : 'down';
+            }
+            preIndex = now;
+            switch (dir) {
+                case 'up':
+                    if (now > 0) {
+                        now--;
+                        move(now);
+                    }
+                    break;
+                case 'down':
+                    if (now < cLiNodes.length - 1) {
+                        now++;
+                        move(now);
+                    }
+                    break;
+            }
+        }
+        contentBind();
+        function contentBind() {
+            content.style.height = document.documentElement.clientHeight - head.offsetHeight + 'px';
+            for (let i = 0; i < cLiNodes.length; i++) {
+                cLiNodes[i].style.height = document.documentElement.clientHeight - head.offsetHeight + 'px';
+            }
+        }
+        headBind();
+        function headBind() {
+            firstUpNode.style.width = '100%';
+            arrowEl.style.left = firstLiNode.offsetLeft + firstLiNode.offsetWidth / 2 - arrowEl.offsetWidth / 2 + 'px';
+            for (let i = 0; i < liNodes.length; i++) {
+                liNodes[i].index = i;
+                liNodes[i].onclick = function () {
+                    preIndex = now;
+                    move(this.index);
+                    now = this.index;
+                };
+            }
+            for (let i = 0; i < dotLis.length; i++) {
+                dotLis[i].index = i;
+                dotLis[i].onclick = function () {
+                    preIndex = now;
+                    move(this.index);
+                    now = this.index;
+                };
+            }
+        }
+        function move(index) {
+            for (let i = 0; i < upNodes.length; i++) {
+                upNodes[i].style.width = '';
+            }
+            upNodes[index].style.width = '100%';
+            arrowEl.style.left = liNodes[index].offsetLeft + liNodes[index].offsetWidth / 2 - arrowEl.offsetWidth / 2 + 'px';
+            cList.style.top = - index * (document.documentElement.clientHeight - head.offsetHeight) + 'px';
+            for (let i = 0; i < dotLis.length; i++) {
+                dotLis[i].className = '';
+            }
+            dotLis[index].className = 'active';
+            if (anArr[index] && typeof anArr[index]['inAn'] === 'function') {
+                anArr[index]['inAn']();
+            }
+            if (anArr[preIndex] && typeof anArr[preIndex]['inAn'] === 'function') {
+                anArr[preIndex]['outAn']();
+            }
+        }
+    };
+</script>
+
+</html>
