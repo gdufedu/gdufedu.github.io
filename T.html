@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <style type="text/css">
+  </style>
+</head>
+
+<body>
+
+<div class="boxDom" id="boxDom">
+<input type="text" placeholder="请输入上次交易价格"><button onclick="T()">确定</button>
+<p></p>
+</div>
+</body>
+<script src='https://cdn.jsdelivr.net/npm/bignumber.js@9.1.0/bignumber.min.js'></script>
+<script>
+function T() {
+  const dom = document.querySelector('#boxDom')
+  const p = dom.querySelector('p')
+  let num = dom.querySelector('input').value
+  num =  new BigNumber(num)
+  let percentage =  new BigNumber(0.011)
+  p.innerHTML = `
+    上一次交易价格: ${num}<br/>
+    建议卖出:${(num.plus(num.multipliedBy(percentage))).toFixed(3)}<br/>
+    买入:${(num.minus(num.multipliedBy(percentage))).toFixed(3)}
+  `
+}
+</script>
+</html>
