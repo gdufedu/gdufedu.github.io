@@ -20,7 +20,7 @@ function T() {
   const p = dom.querySelector('p')
   let num = dom.querySelector('input').value
   num =  new BigNumber(num)
-  let percentage =  new BigNumber(0.012)
+  let percentage =  new BigNumber(0.013)
   p.innerHTML = `
     上一次交易价格: ${num}<br/>
     建议卖出:${(num.plus(num.multipliedBy(percentage))).toFixed(3)}<br/>
