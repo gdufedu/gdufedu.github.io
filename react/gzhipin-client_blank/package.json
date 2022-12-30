@@ -20,8 +20,8 @@
     "babel-plugin-import": "^1.6.5",
     "less": "^2.7.3",
     "less-loader": "^4.0.6",
-    "react-app-rewired": "^1.4.1",
-    "react-scripts": "1.1.0",
+    "react-app-rewired": "^2.2.1",
+    "react-scripts": "5.0.1",
     "redux-devtools-extension": "^2.13.2"
   },
   "scripts": {
